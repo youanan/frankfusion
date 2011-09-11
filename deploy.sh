@@ -30,10 +30,4 @@ s3cmd sync --progress -m application/atom+xml --acl-public _site/ s3://fusion.do
 s3cmd sync --progress -M --acl-public --add-header 'Content-Encoding:gzip' --add-header 'Cache-Control: max-age=31449600' _site/static/ s3://css.dominicwatson.co.uk/frankfusion/ --exclude '*.*' --include '*.js' --include '*.css'
 s3cmd sync --progress -M --acl-public --add-header 'Cache-Control: max-age=31449600' _site/static/ s3://css.dominicwatson.co.uk/frankfusion/ --exclude '*.css' --exclude '*.js'
 
-echo ==================
-echo Backing up source
-echo ==================
-
-s3cmd sync --progress /home/dom/jekyllblog/ s3://files.dominicwatson.co.uk/backups/fusionblog/ --exclude '_site/*'
-
 exit 0
