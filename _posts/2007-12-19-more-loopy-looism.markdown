@@ -7,7 +7,7 @@ categories:
     - ColdFusion
     - Gotchas
 ---
-Here's a little thing I was forced to realise after a far too high profile site when slightly wrong (in a far too big way).
+Here's a little thing I was forced to realise after a far too high profile site when slightly wrong (in a far too big way).<!--more-->
 
 *Looping a query inside a loop of another query changes the way you can refer to the outer-loops current row.* Running the following code demonstrates this:
 

@@ -7,7 +7,7 @@ categories:
     - ColdFusion
     - Solr
 ---
-I've been putting off blogging some of the awesome discoveries I've been making around <a href="http://lucene.apache.org/solr/">Apache Solr</a> due to the daunting legion of things to write about. Also, multi-part blog posts seem all the rage. So, here in bite size chunks, is my sharing of true *Solr power exploitation* in Adobe ColdFusion / Railo / Bluedragon.
+I've been putting off blogging some of the awesome discoveries I've been making around <a href="http://lucene.apache.org/solr/">Apache Solr</a> due to the daunting legion of things to write about. Also, multi-part blog posts seem all the rage. So, here in bite size chunks, is my sharing of true *Solr power exploitation* in Adobe ColdFusion / Railo / Bluedragon.<!--more-->
 
 Intro: is *cfsearch* doing enough for you?
 ------------------------------------------

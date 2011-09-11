@@ -10,7 +10,7 @@ categories:
     - Juicer
 ---
 
-I'm not doing anything revolutionary with Jekyll, a couple of plugins for the sitemap and category pages, a simple script for the atom feed and a bash script for deploying to Amason S3. I aim to keep things simple, after all - that's much the point.
+I'm not doing anything revolutionary with Jekyll, a couple of plugins for the sitemap and category pages, a simple script for the atom feed and a bash script for deploying to Amason S3. I aim to keep things simple, after all - that's much the point.<!--more-->
 
 Install
 -------

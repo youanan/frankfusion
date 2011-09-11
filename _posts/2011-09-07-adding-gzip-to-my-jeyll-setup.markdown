@@ -10,7 +10,7 @@ categories:
     - GZIP
 ---
 
-I've just added gzipping of html, js and css to my Jekyll deploy script. The script now looks like this:
+I've just added gzipping of html, js and css to my Jekyll deploy script. The script now looks like this:<!--more-->
 
 {% highlight sh %}
 #!/bin/bash

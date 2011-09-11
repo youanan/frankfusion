@@ -9,7 +9,7 @@ categories:
     - Tomcat
 ---
 
-In <a href="/2010/12/apache-solr-or-departing-from-confines.html">Part I</a>, I gave a sneak preview of the benefits of using Solr directly over using ColdFusion 9's integrated implementation. Here, in part II, is a quick start guide to getting Solr up and running independently.
+In <a href="/2010/12/apache-solr-or-departing-from-confines.html">Part I</a>, I gave a sneak preview of the benefits of using Solr directly over using ColdFusion 9's integrated implementation. Here, in part II, is a quick start guide to getting Solr up and running independently.<!--more-->
 
 Solr, like ColdFusion, is a Java application that needs to run in a sevlet container such as <a href="http://tomcat.apache.org/">Apache Tomcat</a>, <a href="http://www.caucho.com/">Resin</a>, <a href="http://www.adobe.com/products/jrun/">JRun</a> or <a href="http://jetty.codehaus.org/jetty/">Jetty</a>.
 

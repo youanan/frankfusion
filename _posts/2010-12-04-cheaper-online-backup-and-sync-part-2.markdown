@@ -7,7 +7,7 @@ categories:
     - Amazon S3
     - Ubuntu
 ---
-Following on from my previous post, <a href="/2010/11/cheaper-online-backup-and-sync.html">Cheaper online backup and sync</a>, here's how I got on setting up with <a href="http://s3tools.org/s3cmd">s3cmd</a> (not s3sync).
+Following on from my previous post, <a href="/2010/11/cheaper-online-backup-and-sync.html">Cheaper online backup and sync</a>, here's how I got on setting up with <a href="http://s3tools.org/s3cmd">s3cmd</a> (not s3sync).<!--more-->
 
 Firstly, I'm on Ubuntu, and setting up with the latest version of s3cmd was fairly straightforward. s3cmd is available from the standard Ubuntu repositories, but, as ever, is somewhat out of date. Instead, I downloaded and unpacked the latest version from sourceforge (in my case, 1.0.0-rc):
 

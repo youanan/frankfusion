@@ -7,7 +7,7 @@ categories:
     - Jekyll
 ---
 
-I've been hosting my CF blog with Blogger for a few years now; I liked it for it's price, but not much else. What I've been after is a static blog that I can publish to a CDN, giving me a 'serverless' website that I still have total control over.
+I've been hosting my CF blog with Blogger for a few years now; I liked it for it's price, but not much else. What I've been after is a static blog that I can publish to a CDN, giving me a 'serverless' website that I still have total control over.<!--more-->
 
 Enter Jekyll CMS
 ----------------

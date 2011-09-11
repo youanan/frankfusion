@@ -7,7 +7,7 @@ categories:
     - ColdFusion
     - Railo
 ---
-Here's a little something I found in Railo that differs from CF and which is seemingly undocumented.
+Here's a little something I found in Railo that differs from CF and which is seemingly undocumented.<!--more-->
 
 I had need to create a function with no defined arguments. This function called another function, passing whatever arguments it was given to this second function. Before that happened, it checked whether a single, <span style="font-weight: bold;">unnamed</span> argument was being passed. If that was the case, it would give the argument an appropriate name and carry on. The code I had to check for this unnamed argument was:
 

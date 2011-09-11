@@ -6,7 +6,7 @@ time: 2008-02-18 20:04:00 +00:00
 categories:
     - ColdFusion
 ---
-This seems to come up every now and again on the house of Fusion cf-talk list. Basically, arrays can contain undefined values which cause all sorts of problems. Here's a piece of code that demonstrates the problem:
+This seems to come up every now and again on the house of Fusion cf-talk list. Basically, arrays can contain undefined values which cause all sorts of problems. Here's a piece of code that demonstrates the problem:<!--more-->
 
 {% highlight cfm %}<cfset myArray = ArrayNew(1)>
 <cfset myArray[1] = 'foo'>

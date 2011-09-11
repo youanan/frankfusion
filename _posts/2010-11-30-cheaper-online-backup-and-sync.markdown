@@ -7,7 +7,7 @@ categories:
     - Amazon S3
     - Ubuntu
 ---
-I've been meaning to backup my data online for a long time, indeed, I've dabbled with various solutions. I've never had anything stolen or had a hard drive go fubar on me and so the importance has never been driven home. However, with the plethora of options becoming freely and easily available, I turned my mind to it once more.
+I've been meaning to backup my data online for a long time, indeed, I've dabbled with various solutions. I've never had anything stolen or had a hard drive go fubar on me and so the importance has never been driven home. However, with the plethora of options becoming freely and easily available, I turned my mind to it once more.<!--more-->
 
 My <a href="http://www.theimagegardenblog.com/">dearest darling</a> is a wedding photographer and has many gigabytes of photographs that she would be more than mortified to lose, as would I with the gigabytes of images and raw audio recordings I have accrued over the years. With this in mind, I figured that all the free storage offered by the likes of <a href="http://www.dropbox.com/">DropBox</a> and <a href="https://www.sugarsync.com/">SugarSync</a> would be used up almost instantly. I did try them out however, along with UbuntuOne and they were both great (I found UbuntuOne less so, much to my disappointment). DropBox probably came out on top for me, native linux and android apps working flawlessly and stylishly. What put me off however, were the pricing options.
 

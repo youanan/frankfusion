@@ -8,7 +8,7 @@ categories:
     - Projects
 ---
 
-Last week my boss unveiled the office <a href="http://www.nabaztag.com/">Nabaztag</a>, Natalina. This super bunny will be programmed to alert us of various system failures and notifications, l33t. All we have to do is program it.
+Last week my boss unveiled the office <a href="http://www.nabaztag.com/">Nabaztag</a>, Natalina. This super bunny will be programmed to alert us of various system failures and notifications, l33t. All we have to do is program it.<!--more-->
 
 <img alt="Nabaztag:tag" src="http://www.faberludens.com.br/files/nabaztag_or.jpg" style="margin-left: 200px; width: 100px;" title="Nabaztag:tag" />
 

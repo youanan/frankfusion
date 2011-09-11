@@ -6,7 +6,7 @@ time: 2007-12-04 16:14:00 +00:00
 categories:
     - SQL
 ---
-Just a little thing to remind me to use DateDiff() instead of regular operators when comparing dates. Here's why:
+Just a little thing to remind me to use DateDiff() instead of regular operators when comparing dates. Here's why:<!--more-->
 
 Say you have a deadline date stored in a db and you need to see if today is passed the deadline. If you do this:
 

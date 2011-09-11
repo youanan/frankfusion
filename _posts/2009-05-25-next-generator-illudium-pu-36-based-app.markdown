@@ -7,7 +7,7 @@ categories:
     - ColdFusion
     - Railo
 ---
-One rainy day, I sat down to auto generate a bunch of CFCs using <a href="http://www.remotesynthesis.com/" title="Brian Rinaldi's Blog">Brian Rinaldi's</a> marvellous <a href="http://code.google.com/p/cfcgenerator/source/checkout">Illudium PU-36 Code Generator</a>. The trouble was, I was using Railo, and the blessed thing didn't work first time. Having zero patience, I decided to rewrite the generator using HTML and js only, and adding functionality that I had always wanted to see.
+One rainy day, I sat down to auto generate a bunch of CFCs using <a href="http://www.remotesynthesis.com/" title="Brian Rinaldi's Blog">Brian Rinaldi's</a> marvellous <a href="http://code.google.com/p/cfcgenerator/source/checkout">Illudium PU-36 Code Generator</a>. The trouble was, I was using Railo, and the blessed thing didn't work first time. Having zero patience, I decided to rewrite the generator using HTML and js only, and adding functionality that I had always wanted to see.<!--more-->
 
 <a href="http://nextgen.riaforge.org/">download</a>
 

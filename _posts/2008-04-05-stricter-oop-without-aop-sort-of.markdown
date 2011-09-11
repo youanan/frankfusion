@@ -6,7 +6,7 @@ time: 2008-04-05 05:21:00 +01:00
 categories:
     - ColdFusion
 ---
-*I've been playing around with the idea of forcing my components not to add or remove variables from their 'variables' scope, other than when instantiated. Its something I'd like not to be possible and I'd like a ColdFusion error if it happens. I blogged my first effort at cracking it here*:
+*I've been playing around with the idea of forcing my components not to add or remove variables from their 'variables' scope, other than when instantiated. Its something I'd like not to be possible and I'd like a ColdFusion error if it happens. I blogged my first effort at cracking it here*:<!--more-->
 
 <a href="/2008/03/stricter-oop-using-aop.html">Stricter OOP using AOP!</a>
 

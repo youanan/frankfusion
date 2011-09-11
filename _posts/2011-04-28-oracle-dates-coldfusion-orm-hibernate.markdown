@@ -13,6 +13,7 @@ categories:
 Today I encountered an issue when updating a record in Oracle 10g using an ORM bean. I received the error:
 
 >`ORA-01830 date format picture ends before converting entire input string`
+<!--more-->
 
 The problematic field was defined as follows in the bean:
 

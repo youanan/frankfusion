@@ -7,7 +7,7 @@ categories:
     - ColdFusion
     - JavaScript
 ---
-*A question was asked on the CF-Talk list for which I did not know the answer. I chimed in anyhow and got investigating. In the process, I learned a whole load more javascript as well as all sorts of interesting things about CF8's ajax form fun and, in the end, I solved the problem consicely :)*
+*A question was asked on the CF-Talk list for which I did not know the answer. I chimed in anyhow and got investigating. In the process, I learned a whole load more javascript as well as all sorts of interesting things about CF8's ajax form fun and, in the end, I solved the problem consicely :)*<!--more-->
 
 The problem
 -----------

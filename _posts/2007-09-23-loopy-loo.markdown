@@ -8,7 +8,7 @@ categories:
     - Java
 ---
 
-What is the best way to loop a structure in a cfscript block? On discovering the elements() and keys() methods that are inherited from java.util.dictionary, I presumed these would be faster i.e.
+What is the best way to loop a structure in a cfscript block? On discovering the elements() and keys() methods that are inherited from java.util.dictionary, I presumed these would be faster i.e.<!--more-->
 
 {% highlight cfm %}
 <cfscript>

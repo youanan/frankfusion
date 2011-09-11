@@ -8,7 +8,7 @@ categories:
     - SQL
     - Gotchas
 ---
-Here's something I do quite regularly:
+Here's something I do quite regularly:<!--more-->
 {% highlight cfm %}
 <cfquery name="myquery" datasource="dsn">
 	INSERT INTO foo VALUES ('bar')

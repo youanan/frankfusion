@@ -8,7 +8,7 @@ categories:
     - Java
 ---
 
-After reading this discussion on IsDefined() vs StructKeyExists(), I got to thinking about how one might use the underlying Java methods of ColdFusion structures to combine the URL and FORM variables efficiently (it is related, really).
+After reading this discussion on IsDefined() vs StructKeyExists(), I got to thinking about how one might use the underlying Java methods of ColdFusion structures to combine the URL and FORM variables efficiently (it is related, really).<!--more-->
 
 A quick inspection of the java docs for java.util.Hashtable turned up the putAll() method. With it, you can 'put' one struct into another, overwriting any matching keys.
 

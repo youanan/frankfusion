@@ -8,7 +8,7 @@ categories:
     - XML
     - Projects
 ---
-This pops up frequently enough on the cf-talk list and around the blogosphere. To get an idea of the problem you can read this blog post that usually gets quoted as the answer:
+This pops up frequently enough on the cf-talk list and around the blogosphere. To get an idea of the problem you can read this blog post that usually gets quoted as the answer:<!--more-->
 
 <a href="http://www.talkingtree.com/blog/index.cfm/2005/11/18/XmlSearchNoNameNamespace">http://www.talkingtree.com/blog/index.cfm/2005/11/18/XmlSearchNoNameNamespace</a>
 

@@ -9,7 +9,7 @@ categories:
     - Projects
 ---
 
-Following on from my previous post about extending the cfinput auto-suggest functionality (<a href="/2008/04/tidy-autosuggesting-solution.html">a tidy autosuggesting solution</a>), I decided that my solution was too narrow. I have now written a custom tag that allows access to all the useful properties of the auto-suggest widget.
+Following on from my previous post about extending the cfinput auto-suggest functionality (<a href="/2008/04/tidy-autosuggesting-solution.html">a tidy autosuggesting solution</a>), I decided that my solution was too narrow. I have now written a custom tag that allows access to all the useful properties of the auto-suggest widget.<!--more-->
 
 The tag can be found @ <a href="http://betterautosuggest.riaforge.org/">http://betterautosuggest.riaforge.org/</a>
 

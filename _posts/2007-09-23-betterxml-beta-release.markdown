@@ -11,7 +11,7 @@ categories:
 
 <http://betterxml.riaforge.org/>
 
-After some initial learning about XML and handling it in ColdFusion 6.1 & 7, I came to the conclusion that ColdFusion wasn't the best when it came to XML.
+After some initial learning about XML and handling it in ColdFusion 6.1 & 7, I came to the conclusion that ColdFusion wasn't the best when it came to XML.<!--more-->
 
 When reading and transforming XML, ColdFusion does a great job and is at its usual brilliantly quick. Where I think it gets cumbersome is in maintenance scenarios where you have to edit a given XML file. For example, you may have some XML that is being used as the sole data source and needs updating whenever a user adds item x or deletes item z, etc.
 

@@ -7,7 +7,7 @@ categories:
     - Eclipse
     - Reference
 ---
-This is the first plugin I've tried for UML and I like it. It doesn't have the polish of say, FlashBuilder, but it *is* solid, flexible and easy as pi to use:
+This is the first plugin I've tried for UML and I like it. It doesn't have the polish of say, FlashBuilder, but it *is* solid, flexible and easy as pi to use:<!--more-->
 
 <http://www.umlet.com/>
 

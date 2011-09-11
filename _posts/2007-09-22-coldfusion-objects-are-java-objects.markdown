@@ -8,7 +8,7 @@ categories:
     - Java
 ---
 
-A good while back I read the following post about using the methods that ColdFusion objects inherit from their Java parents. It prompted me to write a little function for finding out what Java objects any ColdFusion object inherits from:
+A good while back I read the following post about using the methods that ColdFusion objects inherit from their Java parents. It prompted me to write a little function for finding out what Java objects any ColdFusion object inherits from:<!--more-->
 
 <http://coldfused.blogspot.com/2007/01/extend-cf-native-objects-harnessing.html>
 

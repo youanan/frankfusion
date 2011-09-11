@@ -7,7 +7,7 @@ categories:
     - ColdFusion
     - Gotchas
 ---
-*Good object design dictates that we encapsulate our objects, hiding direct access to object properties from outside code. Access to the values of these properties is often granted to outside code with the use of 'getter' methods.*
+*Good object design dictates that we encapsulate our objects, hiding direct access to object properties from outside code. Access to the values of these properties is often granted to outside code with the use of 'getter' methods.*<!--more-->
 
 The following, useless, component **appears** to encapsulate its 'foo' property using a getter method but, as we shall see shortly, does nothing of the kind:
 

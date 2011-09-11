@@ -7,9 +7,7 @@ categories:
     - ColdFusion
 ---
 
-*A fair long while ago, I watched a google lecture on writing APIs and I've been thinking about them a fair amount lately; specifically, how attention to creating intuitive and minimal-work-for-the-user interfaces leads to better code.*
-
-
+*A fair long while ago, I watched a google lecture on writing APIs and I've been thinking about them a fair amount lately; specifically, how attention to creating intuitive and minimal-work-for-the-user interfaces leads to better code.*<!--more-->
 
 A developer's dream
 -------------------

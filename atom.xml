@@ -16,7 +16,13 @@
         <link href="http://fusion.dominicwatson.co.uk{{ post.url }}"/>
         <updated>{{ post.date | date_to_xmlschema }}</updated>
         <id>http://fusion.dominicwatson.co.uk{{ post.url }}</id>
-        <summary type="html">{{ post.content | xml_escape }}</summary>
+        <summary type="html">
+		{% if post.excerpt %}
+    			{{ post.excerpt | xml_escape }}
+		{% else %}
+    			{{ post.content | mark_excerpt | xml_escape }}
+		{% endif %}
+	</summary>
     </entry>
     {% endfor %}
 </feed>

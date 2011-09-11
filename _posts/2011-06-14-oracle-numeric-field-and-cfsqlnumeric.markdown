@@ -9,7 +9,7 @@ categories:
     - Gotchas
 ---
 
-Quite simply, *cf_sql_numeric*, as a cfsqltype for cfqueryparam, does not map to the oracle 'numeric' datatype. Instead, if you need decimal places, use *cf_sql_float* (or another type that ensures the correct number is saved for you).
+Quite simply, *cf_sql_numeric*, as a cfsqltype for cfqueryparam, does not map to the oracle 'numeric' datatype. Instead, if you need decimal places, use *cf_sql_float* (or another type that ensures the correct number is saved for you).<!--more-->
 
 *EDIT: Turns out I was wrong...*
 

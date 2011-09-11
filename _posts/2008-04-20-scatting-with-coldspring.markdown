@@ -8,7 +8,7 @@ categories:
     - ColdSpring
     - AOP
 ---
-*I really like ColdSpring - quiet, clean and powerful - mmmm (forgive me, I'm very tired). There is one thing that I have found that bugs me a little however; the verbosity of defining aspects and advisors.*
+*I really like ColdSpring - quiet, clean and powerful - mmmm (forgive me, I'm very tired). There is one thing that I have found that bugs me a little however; the verbosity of defining aspects and advisors.*<!--more-->
 
 Here's a quick xml sample of creating a really simple aspect and applying its advice to a bean:
 {% highlight xml %}

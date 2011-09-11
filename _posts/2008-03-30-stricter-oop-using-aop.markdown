@@ -7,7 +7,7 @@ categories:
     - ColdFusion
     - AOP
 ---
-*An application I wrote recently was exhibiting a strange bug. When a user added contacts to the contacts database, details from previously entered contacts were being inserted in fields that were left blank for the new contact. The client had entered over a hundred contacts before they realised that this was happening and were somewhat worried. After some investigation, I tracked down the cause of the problem: an accidentally unscoped variable in a CFC method.*
+*An application I wrote recently was exhibiting a strange bug. When a user added contacts to the contacts database, details from previously entered contacts were being inserted in fields that were left blank for the new contact. The client had entered over a hundred contacts before they realised that this was happening and were somewhat worried. After some investigation, I tracked down the cause of the problem: an accidentally unscoped variable in a CFC method.*<!--more-->
 
 In Object Oriented languages, an object's properties are explicitly declared in its definition; they are integral to the make-up of the object. To add or remove an object's properties during its life could be seen as mutating the object and an undesirable behaviour in a strict OO design (I do not believe it is possible to do this in C++ but I may be mistaken).
 
