@@ -1,0 +1,22 @@
+---
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title type="text" xml:lang="en">Frank Fusion: ColdFusion, Oracle 11g, Ubuntu, etc.</title>
+    <link type="application/atom+xml" href="http://fusion.dominicwatson.co.uk/atom.xml" rel="self"/>
+    <updated>{{ site.time | date_to_xmlschema }}</updated>
+    <id>http://fusion.dominicwatson.co.uk/</id>
+    <author>
+        <name>Dominic Watson</name>
+    </author>
+    <rights>Copyright (c) 2011 Dominic Watson</rights>
+    {% for post in site.posts limit:10 %}
+    <entry>
+        <title>{{ post.title | xml_escape }}</title>
+        <link href="http://fusion.dominicwatson.co.uk{{ post.url }}"/>
+        <updated>{{ post.date | date_to_xmlschema }}</updated>
+        <id>http://fusion.dominicwatson.co.uk{{ post.url }}</id>
+        <summary type="html">{{ post.content | xml_escape }}</summary>
+    </entry>
+    {% endfor %}
+</feed>

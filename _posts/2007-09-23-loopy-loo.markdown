@@ -1,0 +1,74 @@
+--- 
+name: loopy-loo
+layout: post
+title: Loopy Loo
+time: 2007-08-23 18:27:00 +01:00
+categories:
+    - ColdFusion
+    - Java
+---
+
+What is the best way to loop a structure in a cfscript block? On discovering the elements() and keys() methods that are inherited from java.util.dictionary, I presumed these would be faster i.e.
+
+{% highlight cfm %}
+<cfscript>
+	keys = myStruct.keys();
+	while( keys.hasMoreElements() ){
+		key = keys.nextElement();
+		value = myStruct[key];
+		// do stuff...
+	}
+
+	// or
+
+	values = myStruct.elements();
+	while( values.hasMoreElements() ){
+		value = values.nextElement();
+		// do stuff...
+	}
+
+	// or
+
+	keys = myStruct.keys();
+	values = myStruct.elements();
+	while( keys.hasMoreElements() ){
+		key = keys.nextElement();
+		value = values.nextElement();
+		// do stuff...
+	}
+</cfscript>
+{% endhighlight %}
+
+Normally, I would use StructKeyArray() and one might conceivably use StructKeyList():
+
+{% highlight cfm %}
+<cfscript>
+	// StructKeyArray()
+	keys = StructKeyArray(myStruct);
+	size = ArrayLen(keys);
+	for (i=1; i LTE size; i=i+1){
+		key = keys[i];
+		value = myStruct[key];
+		// do stuff...
+	}
+
+	// StructKeyList()
+	keys = StructKeyList(myStruct);
+	size = ListLen(keys);
+	for (i=1; i LTE size; i=i+1){
+		key = ListGetAt(keys, i);
+		value = myStruct[key];
+		// do stuff...
+	}
+</cfscript>
+{% endhighlight %}
+
+So which is faster? Well, it all depends:
+
+For small structures, say 10 keys, `StructKeyArray()` is the winner followed closely by the inherited Java methods and then `StructKeyList()`. The differences in performance aren't huge here, but `StructKeyList()` is still clearly slower.
+
+As the structure gets larger however, the results change. Using `StructKeyList()` becomes exponentially slower and the inherited Java methods overtake `StructKeyArray()` somewhere in the region of a structure with 150 keys.
+
+Conclusion: use `StructKeyArray()` unless you happen to be dealing with a huge structure and you need to squeeze every bit of performance necessary. I can't see why you should ever use `StructKeyList()` to loop a structure, perhaps someone could give an example where it is necessary?
+
+On a similar note, I had also presumed that using `myArray.size()` would be faster than `ArrayLen(myArray)`, it certainly looks prettier to me anyway! It turns out I was wrong. Some magic in `ArrayLen()` means it well outperforms `size()`. Still, `size()` is OO and looks nice ;)
