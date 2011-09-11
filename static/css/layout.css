@@ -3,16 +3,21 @@ html {
      overflow: scroll;
 }
 
+html,body {
+	background:#f9f9f9;
+}
+
 #container {
 	max-width:650px;
 	margin:0px auto 2em;
 	position:relative;
 }
 
-#post {
+#post, #posts {
 	border:1px solid #cccccc;
 	border-radius:5px;
 	padding:0 20px 10px;
+	background:white;
 }
 
 #posts li {
