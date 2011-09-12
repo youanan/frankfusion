@@ -16,11 +16,11 @@ Defenders might jump in to blame the underlying tech, Apache POI, but that's not
 A solution
 ----------
 
-Flicking franticly frough the frockumentaion of POI, I stumbled on 'setcoloratindex()' which I figured meant I could override the colors in the predefined palette. A google later and I was at a ColdFusion blog who's author had thought the exact same thing **and** came up with some working code, l33t:
+Flicking franticly through the documentaion of POI, I stumbled on the 'setColorAtIndex()' method which I figured meant I could override the colors in the predefined palette. A single google later and I unexpectedly found myself at a ColdFusion blog who's author had thought the exact same thing **and** came up with some working code, l33t:
 
 <http://existdissolve.com/2010/11/cfspreadsheet-custom-colors-part-deux/>
 
-Great, now for some lovely <a href="/2011/09/coding-with-apis-in-mind.html">API creation</a> - how would I most like to override the colors in my code, maintaining readability and without creating new conventions? Here's the code I came up with (credit to *existdissolve* and the *hexToRgb()* udf on <http://cflib.org>:
+With <a href="/2011/09/coding-with-apis-in-mind.html">API coding in mind</a>, I made this wrapper to transparently override the colors in the default color paletted (credit to *existdissolve* and the *hexToRgb()* udf on <http://cflib.org>):
 
 {% highlight cfm %}
 <cfscript>
