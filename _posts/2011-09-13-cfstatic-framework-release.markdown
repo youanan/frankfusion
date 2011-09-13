@@ -9,7 +9,7 @@ categories:
     - Projects
 ---
  
-I am very pleased and excited to announce the public beta release of CfStatic, a framework for the inclusion and packaging of CSS and JavaScript files for CFML applications!<!--more-->.
+I am very pleased and excited to announce the public beta release of CfStatic, a framework for the inclusion and packaging of CSS and JavaScript files for CFML applications.<!--more-->
 
 I have been using it privately for a while now and think it is pretty neat, making managing your CSS and JavaScript across a complex (or simple) application an absolute breeze.
 
