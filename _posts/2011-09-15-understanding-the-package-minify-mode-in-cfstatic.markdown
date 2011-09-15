@@ -15,7 +15,7 @@ categories:
 It's not just about minification
 --------------------------------
 
-It's also about concatenation. Bundling up multiple static files into a single file saves http requests, generally speeding up your pages. One approach is to minify your entire js/css into a single file for the whole site (min.css and min.js). For a small site, this can make a lot of sense. If this works for you, you can use the **all** minify mode. In this mode, you don't even have to use `.include('some.css')`, you can just skip straight to the `.renderIncludes()` method.
+It's also about concatenation. Bundling up multiple static files into a single file saves http requests, generally speeding up your pages. One approach is to minify your entire js/css into a single file for the whole site (min.css and min.js). For a small site, this can make a lot of sense and using the **all** minify mode will do this for you.
 
 However, what happens when you have a print.css? If you bundle all your css into a single file, you won't be able to separate it out into a print.css with a media type of 'print'. Another scenario, especially common with larger sites, is that you may have some javascript or css that really doesn't want to be included in every page, perhaps even only ever included in a single page.
 
