@@ -56,14 +56,20 @@ min/
 
 So now, you could do:
 
+
+**someGlobal.cfm or cfc**
 {% highlight cfm %}
 <cfscript>
-	// some global page.cfm / handler.cfc
     cfstatic.include('/css/core/')                  // include the whole core folder
             .include('/css/print/layout.css')       // in this case, the entire print.min.css will be included because layout.css lives inside it
             .include('/css/ie/');                   // include all the ie stylesheets
+</cfscript>
+{% endhighlight %}
 
-    // about page specific code:
+
+**AboutPage.cfm (or somesuch)**
+{% highlight cfm %}
+<cfscript>
     cfstatic.include('/css/pages/about/about.css'); // only included in the about page
 </cfscript>
 {% endhighlight %}
