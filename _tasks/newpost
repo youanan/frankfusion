@@ -81,4 +81,4 @@ File.open(post, 'w') do |f|
   f << header
 end
  
-system("gedit #{post}")
+system("sublime #{post}")
