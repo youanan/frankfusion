@@ -9,7 +9,7 @@ categories:
     - LESS
 ---
  
-If you've not heard of LESS CSS, head over to <http://lesscss.org/> and fall to your knees in humble awe (and get all coder giddy).
+If you've not heard of LESS CSS, head over to <http://lesscss.org/> and fall to your knees in humble awe (and get all coder giddy).<!--more-->
 
 In CfStatic, simply create .less files with LESS css in them in exactly the same way you create .css files for CfStatic. CfStatic will take your .less files and compile them as css, saving the output to `yourfile.less.css`. It will then minify that compiled css file in accordance with the rules you configure.
 
