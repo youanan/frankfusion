@@ -13,6 +13,11 @@
 		text-decoration:none;
 	}
 
+	header p,
+	#footer {
+		color:#444444;
+	}
+
 	#social-links,
 	#disqus_thread,
 	#powered-by,
@@ -25,6 +30,10 @@
 		padding:0;
 	}
 
+	#post-content {
+		border-top:1px solid #444444;
+	}
+
 	.highlight  { 
 		padding:0.5em 1.5em;
 		margin-bottom:1.5em;
@@ -33,7 +42,6 @@
 
 	pre, code {
 		white-space:pre-wrap;
-		color:#666666 !important;
 	}
 
 }
