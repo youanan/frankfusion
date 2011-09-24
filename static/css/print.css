@@ -1,0 +1,39 @@
+@media print {
+	
+	html, body {
+		background:#ffffff;	
+	}
+
+	h1 {
+		margin-bottom:0.1em;
+		margin-top:0;
+	}
+
+	h1 a {
+		text-decoration:none;
+	}
+
+	#social-links,
+	#disqus_thread,
+	#powered-by,
+	#post-categories {
+		display:none;
+	}
+
+	#post, #posts {
+		border:none;
+		padding:0;
+	}
+
+	.highlight  { 
+		padding:0.5em 1.5em;
+		margin-bottom:1.5em;
+		border:none;
+	}
+
+	pre, code {
+		white-space:pre-wrap;
+		color:#666666 !important;
+	}
+
+}

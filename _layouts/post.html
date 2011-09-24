@@ -4,7 +4,7 @@
 
 <div id="post">
 	<h2 id="page-title">{{ page.title }}</h2>
-	<p class="sub-title">Posted on {{ page.date | date_to_string }}, under {{ page.categories | category_links }}</p>
+	<p class="sub-title">Posted on {{ page.date | date_to_string }}<span id="post-categories">, under {{ page.categories | category_links }}</span></p>
 	
 	<div id="post-content">
 	{{ content }}
