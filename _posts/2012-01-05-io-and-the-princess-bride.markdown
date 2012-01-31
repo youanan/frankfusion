@@ -1,6 +1,6 @@
 ---
 layout: post
-title: IO and The Princess Bride
+title: Io and The Princess Bride
 time: 2012-01-05 18:44:00 +00:00
 categories:
     - Seven Languages in Seven Weeks
