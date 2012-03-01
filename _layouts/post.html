@@ -2,7 +2,7 @@
    layout: default
 ---
 
-<div id="post">
+<article id="post">
 	<h2 id="page-title">{{ page.title }}</h2>
 	<p class="sub-title">Posted on {{ page.date | date_to_string }}<span id="post-categories">, under {{ page.categories | category_links }}</span></p>
 	
@@ -19,4 +19,4 @@
 	        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
 	    })();
 	</script>
-</div>
+</article>

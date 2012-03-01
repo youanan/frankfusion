@@ -11,7 +11,7 @@
 		<link rel="alternate" type="application/atom+xml" href="/atom.xml">
 
 		<!-- css -->
-		<link href="http://css.dominicwatson.co.uk/frankfusion/css/min.css" type="text/css" rel="stylesheet">
+		<link href="/static/css/min.css" type="text/css" rel="stylesheet">
 
 		<!-- google analytics -->
 		<script type="text/javascript">
@@ -29,19 +29,25 @@
 	<body>
 		<div id="container">
 			<header>
-				<h1><a href="/">Frank Fusion</a></h1>
-				<p>ColdFusion, Oracle 11g, Ubuntu, etc.</p>
-				<ul id="social-links">
-					<li class="google-plus"><a target="_blank" title="My Google+ profilecol" href="https://plus.google.com/112844594392114654575/posts">My Google+ profile</a></li>
-					<li class="twitter">    <a target="_blank" title="My twitter account" href="http://twitter.com/#!/dom_watson">My twitter account</a></li>
-					<li class="linked-in">  <a target="_blank" title="My linked in profile" href="http://www.linkedin.com/pub/dominic-watson/18/707/507">My linked in profile</a></li>
-				</ul>
+				<div class="centerizer">
+					<h1><a href="/">Frank Fusion</a></h1>
+					<p>Web development. What more do you want?</p>
+					<ul id="social-links">
+						<li class="google-plus"><a target="_blank" title="My Google+ profile" href="https://plus.google.com/112844594392114654575/posts">My Google+ profile</a></li>
+						<li class="twitter">    <a target="_blank" title="My twitter account" href="http://twitter.com/#!/dom_watson">My twitter account</a></li>
+						<li class="linked-in">  <a target="_blank" title="My linked in profile" href="http://www.linkedin.com/pub/dominic-watson/18/707/507">My linked in profile</a></li>
+					</ul>
+				</div>
 			</header>
 			<div id="main" role="main">
-				{{ content }}
+				<div class="centerizer">
+					{{ content }}
+				</div>
 			</div>
     		<footer>
-    			<p id="footer">&copy; Dominic Watson 2011. <span id="powered-by">Site powered by <a href="https://github.com/mojombo/jekyll" target="_blank">Jekyll</a>, <a href="http://aws.amazon.com/s3/" target="_blank">Amazon S3</a> and <a href="https://github.com/DominicWatson/frankfusion" target="_blank">GitHub</a></span></p>
+				<div class="centerizer">
+    				<p id="footer">&copy; Dominic Watson 2008-2012. <span id="powered-by">Site powered by <a href="https://github.com/mojombo/jekyll" target="_blank">Jekyll</a>, <a href="http://aws.amazon.com/s3/" target="_blank">Amazon S3</a> and <a href="https://github.com/DominicWatson/frankfusion" target="_blank">GitHub</a></span></p>
+				</div>
     		</footer>
   		</div><!--! end of #container -->
 	</body>

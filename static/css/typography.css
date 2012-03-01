@@ -8,7 +8,7 @@
 /* Default font settings. 
    The font-size percentage is of 16px. (0.75 * 16px = 12px) */
 body { 
-  font-size: 75%;
+  font-size: 80%;
   color: #222; 
   font-family: Georgia, serif;
 }
@@ -17,7 +17,7 @@ body {
 /* Headings
 -------------------------------------------------------------- */
 
-h1,h2,h3,h4,h5,h6 { font-weight: normal; color: #111; }
+h1,h2,h3,h4,h5,h6 { font-weight: normal; color: #333333; }
 
 h1 { font-size: 3em; line-height: 1; margin-bottom: 0.5em; }
 h2 { font-size: 2em; margin-bottom: 0.75em; }
@@ -35,13 +35,13 @@ h4 img, h5 img, h6 img {
 /* Text elements
 -------------------------------------------------------------- */
 
-p           { margin: 0 0 1.5em; font-size:1.2em; }
+p           { margin: 0 0 1em; font-size:1.2em; }
 p img       { float: left; margin: 1.5em 1.5em 1.5em 0; padding: 0; }
 p img.right { float: right; margin: 1.5em 0 1.5em 1.5em; }
 
 a:focus, 
 a:hover     { color: #000; }
-a           { color: #009; text-decoration: underline; }
+a           { color: #333; text-decoration: underline; }
 
 blockquote  { margin: 1.5em; color: #666; font-style: italic; }
 strong      { font-weight: bold; }
