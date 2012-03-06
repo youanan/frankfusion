@@ -17,7 +17,7 @@ header, footer, #main  {
 }
 
 .centerizer {
-	max-width : 640px;
+	max-width : 580px;
 	margin    : 0px auto;
 	position  : relative;
 }
@@ -42,7 +42,7 @@ header {
 	/* social links */
 	#social-links {
 		position : absolute;
-		top : 0;
+		bottom : 1em;
 		right : 0;
 		margin : 0
 	}
@@ -51,19 +51,30 @@ header {
 		float : left
 	}
 	#social-links li a {
-		display : block;
-		width : 48px;
-		height : 48px;
+		display     : block;
+		width       : 48px;
+		height      : 48px;
 		text-indent : -9999px;
-	}
-	#social-links li.twitter a {
-		background:url(../images/twitter-logo.png) no-repeat;
-	}
-	#social-links li.linked-in a {
-		background:url(../images/linked-in-logo.png) no-repeat;
+		background  : url(../images/social-icons.png) no-repeat;
+		margin-left : 0.3em;
 	}
 	#social-links li.google-plus a {
-		background : url(../images/google-plus-logo.png) no-repeat;
+		background-position-x : 0px;
+	}
+	#social-links li.twitter a {
+		background-position-x : -48px;
+	}
+	#social-links li.linked-in a {
+		background-position-x : -96px;
+	}
+
+	#ascii-art {
+		position    : absolute;
+		bottom      : -43px;
+		white-space : pre;
+		left        : -19em;
+		font-family : "Bitstream Vera Sans Mono","Monaco",'andale mono','lucida console',monospace,"Courier New";
+		color       : #343131;
 	}
 
 footer {
@@ -87,15 +98,17 @@ footer {
 
 
 #post #page-title {
-	margin : 0.1em 0 0.3em;
+	margin : 0.1em 0;
 }
 
 	#post .sub-title {
-		color : #555555;
+		color      : #555555;
+		font-style : italic;
 	}
 
 #post-content h1 {
-	font-size: 2em; margin-bottom: 0.75em;
+	font-size     : 2em;
+	margin-bottom : 0.75em;
 	border-bottom : 1px solid #d4d1d1;
 }
 #post-content h2 {
