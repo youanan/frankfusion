@@ -27,7 +27,8 @@ header, footer {
 }
 
 header {
-	border-bottom : 1px solid #e4e1e1;
+	border-bottom  : 1px solid #e4e1e1;
+	padding-bottom : 20px;
 }
 
 	header h1 a {
@@ -37,6 +38,7 @@ header {
 
 	header p {
 		font-style : italic;
+		margin     : 0;
 	}
 
 	/* social links */
@@ -70,7 +72,7 @@ header {
 
 	#ascii-art {
 		position    : absolute;
-		bottom      : -28px;
+		bottom      : -21px;
 		white-space : pre;
 		left        : -19em;
 		font-family : "Bitstream Vera Sans Mono","Monaco",'andale mono','lucida console',monospace,"Courier New";
