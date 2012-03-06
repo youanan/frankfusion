@@ -7,6 +7,10 @@
 		<meta name="description" content="A blog space for my ColdFusion and other geek related explorations (e.g. Oracle, Ubuntu, Amazon Web Services, etc.)">
 		<meta name="author" content="Dominic Watson">
 		
+		<!--[if lt IE 9]>
+		<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		
 		<!-- atom feed -->
 		<link rel="alternate" type="application/atom+xml" href="/atom.xml">
 
@@ -28,7 +32,7 @@
 	</head>
 	<body>
 		<div id="container">
-			<header id="header">
+			<header>
 				<div class="centerizer">
 					<h1><a href="/">Frank Fusion</a></h1>
 					<p>The web development blog of Dominic Watson</p>
@@ -54,7 +58,7 @@ _(____nm_______ /____\____</div>
 					{{ content }}
 				</div>
 			</div>
-    		<footer id="footer">
+    		<footer>
 				<div class="centerizer">
     				<p>&copy; Dominic Watson 2008-2012. <span id="powered-by">Site powered by <a href="https://github.com/mojombo/jekyll" target="_blank">Jekyll</a>, <a href="http://aws.amazon.com/s3/" target="_blank">Amazon S3</a> and <a href="https://github.com/DominicWatson/frankfusion" target="_blank">GitHub</a></span></p>
 				</div>
