@@ -12,7 +12,7 @@ html,body {
 	position  : relative;
 }
 
-header, footer, #main  {
+#header, #footer, #main  {
 	padding      : 1em;
 }
 
@@ -22,27 +22,27 @@ header, footer, #main  {
 	position  : relative;
 }
 
-header, footer {
+#header, #footer {
 	background-color : #f4f1f1;
 }
 
-header {
+#header {
 	border-bottom : 1px solid #e4e1e1;
 }
 
-	header h1 a {
+	#header h1 a {
 		color           : #333333;
 		text-decoration : none;
 	}
 
-	header p {
+	#header p {
 		font-style : italic;
 	}
 
 	/* social links */
 	#social-links {
 		position : absolute;
-		bottom : 1em;
+		bottom : 0;
 		right : 0;
 		margin : 0
 	}
@@ -59,25 +59,25 @@ header {
 		margin-left : 0.3em;
 	}
 	#social-links li.google-plus a {
-		background-position-x : 0px;
-	}
-	#social-links li.twitter a {
-		background-position-x : -48px;
+		background-position : 0px 0px;
 	}
 	#social-links li.linked-in a {
-		background-position-x : -96px;
+		background-position : -48px 0px;
+	}
+	#social-links li.twitter a {
+		background-position : -96px 0px;
 	}
 
 	#ascii-art {
 		position    : absolute;
-		bottom      : -43px;
+		bottom      : -28px;
 		white-space : pre;
 		left        : -19em;
 		font-family : "Bitstream Vera Sans Mono","Monaco",'andale mono','lucida console',monospace,"Courier New";
 		color       : #343131;
 	}
 
-footer {
+#footer {
 	border-top : 1px solid #e4e1e1;
 }
 
