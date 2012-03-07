@@ -28,7 +28,6 @@ header, footer {
 
 header {
 	border-bottom  : 1px solid #e4e1e1;
-	padding-bottom : 20px;
 }
 
 	header h1 a {
@@ -68,15 +67,6 @@ header {
 	}
 	#social-links li.twitter a {
 		background-position : -96px 0px;
-	}
-
-	#ascii-art {
-		position    : absolute;
-		bottom      : -21px;
-		white-space : pre;
-		left        : -19em;
-		font-family : "Bitstream Vera Sans Mono","Monaco",'andale mono','lucida console',monospace,"Courier New";
-		color       : #343131;
 	}
 
 footer {
