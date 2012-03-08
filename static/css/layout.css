@@ -77,6 +77,12 @@ footer {
 	border-top : 1px solid #e4e1e1;
 }
 
+#main h1,
+#main h2,
+#main h3 {
+	color : #376477;
+}
+
 #posts ul {
 	margin : 0;
 }
@@ -112,23 +118,24 @@ article {
 	article #published-in {
 		color         : #555555;
 		text-align    : right;
-		margin-bottom : 2em;
-	}
-
-	article h1,
-	article h2,
-	article h3 {
-		color : #376477;
+		margin-bottom : 1em;
 	}
 
 	article h1 {
 		font-size     : 2em;
-		margin-bottom : 0.75em;
-		border-bottom : 1px solid #d4d1d1;
+		margin        : 0.1em 0;
 	}
 	article h2 {
-		font-size: 1.5em; line-height: 1; margin-bottom: 0.5em;
+		font-size     : 1.6em;
+		line-height   : 1;
+		margin-bottom : 0.5em;
+		border-bottom : 1px dotted;
 	}
 	article h3 {
 		font-size: 1.2em;
+	}
+
+	article #comments-container {
+		border-top  : 3px double #e4e1e1;
+		padding-top : 1em;
 	}
