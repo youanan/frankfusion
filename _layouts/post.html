@@ -2,13 +2,12 @@
    layout: default
 ---
 
-<article id="post">
+<article>
+	<time>{{ page.date | date_to_long_string }}</time>
 	<h2 id="page-title">{{ page.title }}</h2>
-	<p class="sub-title">Posted on {{ page.date | date_to_string }}<span id="post-categories">, under {{ page.categories | category_links }}</span></p>
+	<aside id="published-in">Published in {{ page.categories | category_links }}</aside>
 	
-	<div id="post-content">
 	{{ content }}
-	</div>
 
 	<div id="disqus_thread"></div>
 	<script type="text/javascript">
