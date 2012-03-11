@@ -53,14 +53,18 @@ acronym     { border-bottom: 1px dotted #666; }
 address     { margin: 0 0 1.5em; font-style: italic; }
 del         { color:#666; }
 
-pre,code    { margin: 1.5em 0; white-space: pre; }
-tt          { display: block; margin: 1.5em 0; line-height: 1.5; }
-pre,code,tt,.mono { font: 0.9em "Bitstream Vera Sans Mono","Monaco",'andale mono', 'lucida console', monospace, "Courier New"; line-height: 1.5; } 
-
 article * {
 	font-family : Verdana, "Sans serif";
 	font-size   : 1em;
 }
+
+pre,code    { margin: 1.5em 0; white-space: pre; }
+tt          { display: block; margin: 1.5em 0; line-height: 1.5; }
+pre, code, tt, .mono {
+  font-size   : 0.9em;
+  font-family : "Bitstream Vera Sans Mono","Monaco",'andale mono', 'lucida console', monospace, "Courier New" !important;
+  line-height : 1.5; 
+} 
 
 article h1,
 article h2,
