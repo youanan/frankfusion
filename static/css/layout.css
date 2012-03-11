@@ -116,9 +116,9 @@ article {
 	}
 
 	article #published-in {
-		color         : #555555;
-		text-align    : right;
-		margin-bottom : 1em;
+		color      : #555555;
+		text-align : right;
+		margin     : 1em 0;
 	}
 
 	article h1 {

@@ -57,16 +57,27 @@ pre,code    { margin: 1.5em 0; white-space: pre; }
 tt          { display: block; margin: 1.5em 0; line-height: 1.5; }
 pre,code,tt,.mono { font: 0.9em "Bitstream Vera Sans Mono","Monaco",'andale mono', 'lucida console', monospace, "Courier New"; line-height: 1.5; } 
 
-article p,
-article time {
+article * {
 	font-family : Verdana, "Sans serif";
 	font-size   : 1em;
 }
 
-article #post-content p:first-child {
+article h1,
+article h2,
+article h3,
+article h4,
+article #post-content p:first-child,
+article #post-content p:first-child * {
 	font-family : Georgia, serif;
+}
+
+article p:first-child {
 	font-size   : 1.2em;
 	font-style  : italic;
+}
+
+article #post-content blockquote p {
+	font-size   : 1.1em;
 }
 
 /* Lists
