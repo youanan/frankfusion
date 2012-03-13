@@ -18,11 +18,12 @@
 		color:#444444;
 	}
 
-	#social-links,
-	#disqus_thread,
+	#follow-me,
+	#fork-me,
+	#comments-container,
 	#powered-by,
-	#post-categories,
-	#ascii-art {
+	#published-in,
+	nav {
 		display:none;
 	}
 
@@ -32,7 +33,7 @@
 	}
 
 	#post-content {
-		border-top:1px solid #444444;
+		padding-top : 0.5em;
 	}
 
 	.highlight  { 
