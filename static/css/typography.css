@@ -88,6 +88,11 @@ article #post-content blockquote p {
 	font-size   : 1.1em;
 }
 
+#dsq-content .dsq-comment-text p {
+  font-size  : 1em;
+  font-style : normal;
+}
+
 /* Lists
 -------------------------------------------------------------- */
 
