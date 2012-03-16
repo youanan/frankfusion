@@ -4,5 +4,4 @@ files: [
   , 'static/css/lib/syntax.css'
   , 'static/css/layout.css'
   , 'static/css/article.css'
-  , 'static/css/print.css'
-]
+  , 'static/css/print.css' ]

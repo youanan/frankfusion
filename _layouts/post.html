@@ -6,14 +6,14 @@
 	<section id="post-header">
 		<time>{{ page.date | date_to_long_string }}</time>
 		<h1 id="page-title">{{ page.title }}</h1>
-		<aside id="published-in">Published in {{ page.categories | category_links }}</aside>
+		<aside id="published-in" class="no-print">Published in {{ page.categories | category_links }}</aside>
 	</section>
 
 	<section id="post-content">
 		{{ content }}
 	</section>
 
-	<section id="comments-container" title="discussion">
+	<section id="comments-container" title="discussion" class="no-print">
 		<h1>Discussion</h1>
 		<div id="disqus_thread"></div>
 		<script type="text/javascript">

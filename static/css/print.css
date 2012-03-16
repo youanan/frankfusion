@@ -1,41 +1,11 @@
 @media print {
-	
-	html, body {
-		background:#ffffff;	
-	}
 
-	h1 {
-		margin-bottom:0.1em;
-		margin-top:0;
-	}
-
-	h1 a {
-		text-decoration:none;
-	}
-
-	header p,
-	#footer {
-		color:#444444;
-	}
-
-	#follow-me,
-	#fork-me,
-	#comments-container,
-	#powered-by,
-	#published-in,
-	nav {
+	/* hide content */
+	.no-print {
 		display:none;
 	}
 
-	#post {
-		border:none;
-		padding:0;
-	}
-
-	#post-content {
-		padding-top : 0.5em;
-	}
-
+	/* code blocks */
 	.highlight  { 
 		padding:0.5em 1.5em;
 		margin-bottom:1.5em;
