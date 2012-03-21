@@ -18,11 +18,11 @@ module Jekyll
 
       files_to_minify = config['files'] || get_css_files(site, config['css_source'])
 
-      last_modified = files_to_minify.reduce( Time.now - (60*60*24*365*20) ) do |latest,filepath|
+      last_modified = files_to_minify.reduce( Time.at(0) ) do |latest,filepath|
         modified = File.mtime(filepath)
         modified > latest ? modified : latest
       end
-      $minified_filename = last_modified.strftime("%Y%m%d%H%M") + '.min.css'
+      $minified_filename = last_modified.strftime("%Y%m%d%H%M") + '.' + $minified_filename
 
       output_dir = File.join(site.config['destination'], config['css_destination'])
       output_file = File.join(output_dir, $minified_filename)
