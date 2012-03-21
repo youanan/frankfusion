@@ -46,6 +46,6 @@ lastModified = ArrayFold( arrayOfFiles, '1900-01-01', function( latest, filepath
 Ben Nadel has drawn out how you would implement functions like `ArrayFold()`, but I think that it would
 be great to see them implemented natively.
 
-Thoughts?
-
 <http://www.bennadel.com/blog/2335-ColdFusion-10-Beta-Closures-Function-Expressions-And-Functional-Programming.htm>
+
+Thoughts?
