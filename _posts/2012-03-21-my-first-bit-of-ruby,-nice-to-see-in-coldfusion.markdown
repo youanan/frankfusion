@@ -22,7 +22,7 @@ last_modified = array_of_files.reduce( Time.at(0) ) do |latest,filepath|
 end
 {% endhighlight %}
 
-##A n00bs explanation of the reduce method
+##My (n00b) explanation of the reduce method
 The reduce method takes an initial value (in this case, `Time.at(0)`) + a code block
 that will be called for each item in the collection (a function to you and me). The code block 
 takes two arguments, the last returned value (or initial value if it is the first item) + the next 
