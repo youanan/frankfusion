@@ -2,18 +2,18 @@
 
 	/* hide content */
 	.no-print {
-		display:none;
+		display : none;
 	}
 
 	/* code blocks */
 	.highlight  { 
-		padding:0.5em 1.5em;
-		margin-bottom:1.5em;
-		border:none;
+		padding       : 0.5em 1.5em;
+		margin-bottom : 1.5em;
+		border        : none;
 	}
 
 	pre, code {
-		white-space:pre-wrap;
+		white-space : pre-wrap;
 	}
 
 }
