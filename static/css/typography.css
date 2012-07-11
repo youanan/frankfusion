@@ -1,15 +1,15 @@
-/* -------------------------------------------------------------- 
-   
+/* --------------------------------------------------------------
+
    typography.css
    * Sets up some sensible default typography.
-      
+
 -------------------------------------------------------------- */
 
-/* Default font settings. 
+/* Default font settings.
    The font-size percentage is of 16px. (0.75 * 16px = 12px) */
-body { 
+body {
   font-size: 80%;
-  color: #222; 
+  color: #222;
   font-family: Georgia, serif;
 }
 
@@ -33,7 +33,7 @@ p           { margin: 0 0 1em; font-size:1.2em; }
 p img       { float: left; margin: 1.5em 1.5em 1.5em 0; padding: 0; }
 p img.right { float: right; margin: 1.5em 0 1.5em 1.5em; }
 
-a:focus, 
+a:focus,
 a:hover     { color: #000; }
 a           { color: #333; text-decoration: underline; }
 
@@ -43,7 +43,7 @@ em,dfn      { font-style: italic; }
 dfn         { font-weight: bold; }
 sup, sub    { line-height: 0; }
 
-abbr, 
+abbr,
 acronym     { border-bottom: 1px dotted #666; }
 address     { margin: 0 0 1.5em; font-style: italic; }
 del         { color:#666; }
@@ -64,13 +64,14 @@ tt          { display: block; margin: 1.5em 0; line-height: 1.5; }
 pre, code, tt, .mono {
   font-size   : 0.9em;
   font-family : "Bitstream Vera Sans Mono","Monaco",'andale mono', 'lucida console', monospace, "Courier New";
-  line-height : 1.5; 
-} 
+  line-height : 1.5;
+}
 
 article h1,
 article h2,
 article h3,
 article h4,
+article blockquote,
 article #post-content p:first-child,
 article #post-content p:first-child * {
   font-family : Georgia, serif;
@@ -82,7 +83,8 @@ article p:first-child {
 }
 
 article #post-content blockquote p {
-  font-size   : 1.1em;
+  font-size  : 1em;
+  font-style : italic;
 }
 
 #dsq-content .dsq-comment-text p {
