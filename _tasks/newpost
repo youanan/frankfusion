@@ -5,12 +5,12 @@
 # Change the blog_dir variable below, and you should be set.
 # For maximum win, put in ~/bin/ (and add that to your $PATH)
 #
-# Jon Canady, 2010. 
+# Jon Canady, 2010.
 # Covered by the WTFPL: http://sam.zoy.org/wtfpl/
 ###
 
 # omit the trailing slash, please
-blog_dir = "." 
+blog_dir = "."
 
 
 require 'optparse'
@@ -23,7 +23,7 @@ optparse = OptionParser.new do |opts|
   opts.banner = "Usage: newpost [options] \"title of post\""
 
   options[:draft] = false
-  opts.on('-d', '--draft', 'Create post as a draft') do 
+  opts.on('-d', '--draft', 'Create post as a draft') do
     options[:draft] = true
   end
 
@@ -50,7 +50,7 @@ rescue OptionParser::InvalidOption => e
   puts o
   exit 1
 end
- 
+
 if ARGV[0].nil?
   optparse.display
   exit 1
@@ -60,12 +60,12 @@ puts "Generating post..."
 
 date_prefix = Time.now.strftime("%Y-%m-%d")
 date_stamp = Time.now.strftime("%Y-%m-%d %H:%M:00 +00:00")
-postname = ARGV[0].strip.downcase.gsub(/ /, '-')
+postname = ARGV[0].strip.downcase.gsub(/[^A-Za-z]/, '-').gsub(/\-+/, '-')
 
 post_dir = options[:draft] ? '_drafts' : '_posts'
 
 post = "#{blog_dir}/#{post_dir}/#{date_prefix}-#{postname}.#{options[:format]}"
- 
+
 header = <<-END
 ---
 layout: post
@@ -76,9 +76,9 @@ categories:
 ---
 Teaser goes here...<!--more-->
 END
- 
+
 File.open(post, 'w') do |f|
   f << header
 end
- 
+
 system("sublime-text-2 #{post}")
