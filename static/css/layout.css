@@ -127,10 +127,18 @@ nav {
 
 	.post-list a {
 		text-decoration : none;
+		padding-left    : 12px;
+		margin-left     : -12px;
 	}
+
+		.post-list a:focus {
+			outline    : 0;
+			background : url(../images/focus-arrow.gif) no-repeat center left;
+		}
 
 #flickr-slideshow {
 	width  : 540px;
 	height : 390px;
 	margin : 1em auto;
 }
+
