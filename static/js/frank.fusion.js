@@ -2,6 +2,7 @@
 
 	var $keyboardHelp = $( '#keyboard-navigation-help' )
 	  , $categories   = $( '#published-in a' )
+	  , $showHelp     = $( '#show-keyboard-shortcuts' )
 	  , _gotoMode     = false
 	  , _helpShowing  = false
 	  , _shiftPostListFocus
@@ -94,5 +95,10 @@
 	         .keydown( 'shift+/', _toggleKeyboardShortcutHelp )
 	         .keydown( 'esc'    , _escapeFeatures             )
 	         .keydown( _genericKeyHandler );
+
+	$showHelp.click( function( e ){
+		e.preventDefault();
+		_toggleKeyboardShortcutHelp();
+	} );
 
 } )( jQuery );

@@ -99,9 +99,12 @@ article #post-content blockquote p {
 	#keyboard-navigation-help h1 {
 		font-size : 1.8em;
 	}
+	#keyboard-navigation-help dd, dt {
+		line-height : 1.5;
+	}
 	#keyboard-navigation-help dt {
 		font-size : 1.4em;
 	}
-	#keyboard-navigation-help dd strong {
-		color : yellow;
-	}
+		#keyboard-navigation-help dd strong {
+			color : yellow;
+		}

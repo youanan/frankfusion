@@ -70,6 +70,18 @@ header {
 		background  : url(../images/forkme.png) no-repeat;
 	}
 
+	#show-keyboard-shortcuts {
+		display         : block;
+		background      : url(../images/keyboard.png) no-repeat;
+		padding         : 9px 0 0 35px;
+		height          : 32px;
+		position        : absolute;
+		top             : 20px;
+		right           : 0;
+		color           : #666666;
+		text-decoration : none;
+	}
+
 footer {
 	border-top : 1px solid #e4e1e1;
 }
@@ -145,13 +157,13 @@ nav {
 #keyboard-navigation-help {
 	display          : none;
 	position         : absolute;
-	top              : 100px;
-	right            : 100px;
+	top              : 48px;
+	right            : 33px;
 	z-index          : 3;
 	opacity          : 0.9;
 	background-color : #333333;
 	border-radius    : 10px 10px 10px 10px;
-	padding          : 2em;
+	padding          : 1em 2em;
 }
 
 	#keyboard-navigation-help h1 {
@@ -161,7 +173,6 @@ nav {
 
 	#keyboard-navigation-help dd {
 		margin-left : 1em;
-		line-height : 1.5;
 	}
 
 		#keyboard-navigation-help dd span {
