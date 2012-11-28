@@ -142,3 +142,29 @@ nav {
 	margin : 1em auto;
 }
 
+#keyboard-navigation-help {
+	display          : none;
+	position         : absolute;
+	top              : 100px;
+	right            : 100px;
+	z-index          : 3;
+	opacity          : 0.9;
+	background-color : #333333;
+	border-radius    : 10px 10px 10px 10px;
+	padding          : 2em;
+}
+
+	#keyboard-navigation-help h1 {
+		margin : 0;
+		border-bottom: 1px solid white;
+	}
+
+	#keyboard-navigation-help dd {
+		margin-left : 1em;
+		line-height : 1.5;
+	}
+
+		#keyboard-navigation-help dd span {
+			display : inline-block;
+			width   : 10em;
+		}
