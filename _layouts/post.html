@@ -4,7 +4,7 @@
 
 <article>
 	<section id="post-header">
-		<time>{{ page.date | date_to_long_string }}</time>
+		<aside class="time">{{ page.date | date_to_long_string }}</aside>
 		<h1 id="page-title">{{ page.title }}</h1>
 		<aside id="published-in" class="no-print">Published in {{ page.categories | category_links }}</aside>
 	</section>

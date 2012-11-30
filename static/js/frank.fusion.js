@@ -3,21 +3,21 @@
 	var $keyboardHelp = $( '#keyboard-navigation-help' )
 	  , $categories   = $( '#published-in a' )
 	  , $showHelp     = $( '#show-keyboard-shortcuts' )
-	  , _gotoMode     = false
-	  , _helpShowing  = false
-	  , _shiftPostListFocus
-	  , _showKeyboardShortcutHelp
-	  , _hideKeyboardShortcutHelp
-	  , _toggleKeyboardShortcutHelp
-	  , _toggleGotoMode
-	  , _gotoAccessKeyLink
-	  , _gotoCategory
-	  , _genericKeyHandler
-	  , _escapeFeatures
-	  , _getFocusedPostLink;
+	  , gotoMode     = false
+	  , helpShowing  = false
+	  , shiftPostListFocus
+	  , showKeyboardShortcutHelp
+	  , hideKeyboardShortcutHelp
+	  , toggleKeyboardShortcutHelp
+	  , toggleGotoMode
+	  , gotoAccessKeyLink
+	  , gotoCategory
+	  , genericKeyHandler
+	  , escapeFeatures
+	  , getFocusedPostLink;
 
-	_shiftPostListFocus = function( e, direction ){
-		var $focusedLink = _getFocusedPostLink()
+	shiftPostListFocus = function( e, direction ){
+		var $focusedLink = getFocusedPostLink()
 		  , $focusedItem, $nextItemToFocusOn;
 
 		if ( $focusedLink.length ) {
@@ -34,71 +34,71 @@
 		}
 	};
 
-	_toggleGotoMode = function() {
-		_gotoMode = !_gotoMode;
+	toggleGotoMode = function() {
+		gotoMode = !gotoMode;
 
-		if ( _gotoMode ) {
-			setTimeout( _toggleGotoMode, 1000 );
+		if ( gotoMode ) {
+			setTimeout( toggleGotoMode, 1000 );
 		}
 	};
 
-	_showKeyboardShortcutHelp = function(){
-		_helpShowing = true;
+	showKeyboardShortcutHelp = function(){
+		helpShowing = true;
 		$keyboardHelp.stop().fadeIn( 400 );
 	};
 
-	_hideKeyboardShortcutHelp = function(){
-		if ( _helpShowing ) {
-			_helpShowing = false;
+	hideKeyboardShortcutHelp = function(){
+		if ( helpShowing ) {
+			helpShowing = false;
 			$keyboardHelp.stop().fadeOut( 400 );
 		}
 	};
 
-	_toggleKeyboardShortcutHelp = function(){
-		_helpShowing ? _hideKeyboardShortcutHelp() : _showKeyboardShortcutHelp();
+	toggleKeyboardShortcutHelp = function(){
+		helpShowing ? hideKeyboardShortcutHelp() : showKeyboardShortcutHelp();
 	};
 
-	_genericKeyHandler = function( e ){
+	genericKeyHandler = function( e ){
 		var chr = String.fromCharCode( e.keyCode );
-		if ( _gotoMode && chr !== 'g' && chr !== 'G' ) {
-			isNaN( chr ) ? _gotoAccessKeyLink( chr ) : _gotoCategory( chr );
+		if ( gotoMode && chr !== 'g' && chr !== 'G' ) {
+			isNaN( chr ) ? gotoAccessKeyLink( chr ) : gotoCategory( chr );
 		}
 	};
 
-	_gotoAccessKeyLink = function( key ){
-		var $gotoLink = $( '*[accesskey=' + key.toLowerCase() + ']' );
+	gotoAccessKeyLink = function( key ){
+		var $gotoLink = $( '*[data-goto-key=' + key.toLowerCase() + ']' );
 
 		if ( $gotoLink.length ) {
 			document.location = $gotoLink.attr('href');
 		}
 	};
 
-	_gotoCategory = function( index ){
+	gotoCategory = function( index ){
 		if ( index >= 1 && index <= $categories.length ) {
 			document.location = $categories.get( index-1 ).href;
 		}
 	};
 
-	_getFocusedPostLink = function(){
+	getFocusedPostLink = function(){
 		return $( '.post-list-item-link:focus' );
 	};
 
-	_escapeFeatures = function(){
-		_hideKeyboardShortcutHelp();
-		_getFocusedPostLink().blur();
+	escapeFeatures = function(){
+		hideKeyboardShortcutHelp();
+		getFocusedPostLink().blur();
 	};
 
 
-	$('body').keydown( 'up'     , function( e ){ _shiftPostListFocus( e, 'up'   ); } )
-	         .keydown( 'down'   , function( e ){ _shiftPostListFocus( e, 'down' ); } )
-	         .keydown( 'g'      , _toggleGotoMode             )
-	         .keydown( 'shift+/', _toggleKeyboardShortcutHelp )
-	         .keydown( 'esc'    , _escapeFeatures             )
-	         .keydown( _genericKeyHandler );
+	$('body').keydown( 'up'     , function( e ){ shiftPostListFocus( e, 'up'   ); } )
+	         .keydown( 'down'   , function( e ){ shiftPostListFocus( e, 'down' ); } )
+	         .keydown( 'g'      , toggleGotoMode             )
+	         .keydown( 'shift+/', toggleKeyboardShortcutHelp )
+	         .keydown( 'esc'    , escapeFeatures             )
+	         .keydown( genericKeyHandler );
 
 	$showHelp.click( function( e ){
 		e.preventDefault();
-		_toggleKeyboardShortcutHelp();
+		toggleKeyboardShortcutHelp();
 	} );
 
 } )( jQuery );

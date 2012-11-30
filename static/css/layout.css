@@ -156,9 +156,9 @@ nav {
 
 #keyboard-navigation-help {
 	display          : none;
-	position         : absolute;
-	top              : 48px;
-	right            : 33px;
+	position         : fixed;
+	top              : 1em;
+	right            : 1em;
 	z-index          : 3;
 	opacity          : 0.9;
 	background-color : #333333;
