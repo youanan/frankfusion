@@ -4,12 +4,29 @@ article .time {
 	font-size      : 1.1em;
 	color          : #666;
 	margin         : 0.5em 0;
+	float          : left;
 }
+
+article nav {
+	float      : right;
+	background : none;
+}
+
+	article nav a, article nav a:hover {
+		color           : #999;
+		font-family     : Verdana,"Sans serif";
+		font-size       : 1em;
+	}
+
+	article nav .page-nav-item:last-child {
+		margin-left : 1em;
+	}
 
 article #page-title {
 	margin        : 0.1em 0;
 	font-size     : 2.4em;
 	border-bottom : 1px solid;
+	clear         : both;
 }
 
 article #published-in {

@@ -148,6 +148,10 @@ nav {
 			background : url(../images/focus-arrow.gif) no-repeat center left;
 		}
 
+article {
+	margin-top : 1em;
+}
+
 #flickr-slideshow {
 	width  : 540px;
 	height : 390px;
