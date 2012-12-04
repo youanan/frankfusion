@@ -8,14 +8,16 @@ article .time {
 }
 
 article nav {
-	float      : right;
-	background : none;
+	float            : right;
+	border-radius    : 5px 5px 5px 5px;
+	padding          : 0.5em 1em;
+	background-color : transparent;
 }
 
 	article nav a, article nav a:hover {
-		color           : #999;
-		font-family     : Verdana,"Sans serif";
-		font-size       : 1em;
+		font-family    : Verdana,"Sans serif";
+		font-size      : 1em;
+		color          : #376477;
 	}
 
 	article nav .page-nav-item:last-child {

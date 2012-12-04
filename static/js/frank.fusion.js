@@ -101,4 +101,11 @@
 		toggleKeyboardShortcutHelp();
 	} );
 
+	$( '.shortcut-key' ).each( function(){
+		var $this = $( this )
+		  , key   = $this.text().toLowerCase();
+
+		$this.attr( "title", "Type 'g' then '" + key + "' to follow this link" );
+	} );
+
 } )( jQuery );
