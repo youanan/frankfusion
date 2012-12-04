@@ -5,14 +5,14 @@
 <article>
 	<section id="post-header">
 		<nav id="post-navigation">
-			{% if page.previous %}
-				<span class="page-nav-item">
-					<a rel="prev" data-goto-key="p" href="{{ page.previous.url }}" title="View previous post, '{{ page.previous.title }}'">&larr; <b class="shortcut-key">P</b>revious</a>
-				</span>
-			{% endif %}
 			{% if page.next %}
 				<span class="page-nav-item">
-					<a rel="next" data-goto-key="n" href="{{ page.next.url }}" title="View next post, '{{ page.next.title }}'"><b class="shortcut-key">N</b>ext &rarr;</a>
+					<a rel="next" data-goto-key="n" href="{{ page.next.url }}" title="View next post, '{{ page.next.title }}'">&larr; <b class="shortcut-key">N</b>ewer</a>
+				</span>
+			{% endif %}
+			{% if page.previous %}
+				<span class="page-nav-item">
+					<a rel="prev" data-goto-key="o" href="{{ page.previous.url }}" title="View previous post, '{{ page.previous.title }}'"><b class="shortcut-key">O</b>lder &rarr;</a>
 				</span>
 			{% endif %}
 		</nav>
