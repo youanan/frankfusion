@@ -114,4 +114,11 @@
 		$this.attr( "title", "Type 'g' then '" + key + "' to follow this link" );
 	} );
 
+	$( window ).load( function(){
+		if ( $('#disqus_thread').length ){
+			window.disqus_shortname = 'frankfusion';
+			$('body').append( '<script type="text/javascript" async="true" src="http://frankfusion.disqus.com/embed.js"></script>' );
+		}
+	} );
+
 } )( jQuery );
