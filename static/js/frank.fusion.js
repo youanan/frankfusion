@@ -14,7 +14,8 @@
 	  , gotoCategory
 	  , genericKeyHandler
 	  , escapeFeatures
-	  , getFocusedPostLink;
+	  , getFocusedPostLink
+	  , focusOnFirstPost;
 
 	shiftPostListFocus = function( e, direction ){
 		var $focusedLink = getFocusedPostLink()
@@ -83,6 +84,10 @@
 		return $( '.post-list-item-link:focus' );
 	};
 
+	focusOnFirstPost = function(){
+		$( '.post-list-item-link:first' ).focus();
+	};
+
 	escapeFeatures = function(){
 		hideKeyboardShortcutHelp();
 		getFocusedPostLink().blur();
@@ -94,6 +99,7 @@
 	         .keydown( 'g'      , toggleGotoMode             )
 	         .keydown( 'shift+/', toggleKeyboardShortcutHelp )
 	         .keydown( 'esc'    , escapeFeatures             )
+	         .keydown( '1'      , focusOnFirstPost           )
 	         .keydown( genericKeyHandler );
 
 	$showHelp.click( function( e ){
