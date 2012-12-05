@@ -19,9 +19,10 @@ echo ==================
 echo Syncing to S3
 echo ==================
 s3cmd sync --progress --acl-public _site/ s3://fusion.dominicwatson.co.uk/ --exclude '*.sh' --exclude '*.yml' --exclude 'static/*' --exclude '*.html' --exclude 'atom.xml' --exclude '*.css' --exclude '*.js'
+s3cmd sync --progress --acl-public --add-header 'Cache-Control: max-age=31449600' _site/static/images/ s3://fusion.dominicwatson.co.uk/static/images/
 s3cmd sync --progress -m application/atom+xml --acl-public _site/ s3://fusion.dominicwatson.co.uk/ --exclude '*.*' --include 'atom.xml'
-s3cmd sync --progress -m text/html --acl-public --add-header 'Content-Encoding:gzip' --add-header 'X-UA-Compatible:IE=edge' _site/ s3://fusion.dominicwatson.co.uk/ --exclude '*.*' --include '*.html'
-s3cmd sync --progress -m text/css --acl-public --add-header 'Content-Encoding:gzip' --add-header 'Cache-Control: max-age=86400' _site/ s3://fusion.dominicwatson.co.uk/ --exclude '*.*' --include '*.css'
-s3cmd sync --progress -m text/js --acl-public --add-header 'Content-Encoding:gzip' --add-header 'Cache-Control: max-age=86400' _site/ s3://fusion.dominicwatson.co.uk/ --exclude '*.*' --include '*.js'
+s3cmd sync --progress -m text/css --acl-public --add-header 'Content-Encoding:gzip' --add-header 'Cache-Control: max-age=31449600' _site/ s3://fusion.dominicwatson.co.uk/ --exclude '*.*' --include '*.css'
+s3cmd sync --progress -m text/js  --acl-public --add-header 'Content-Encoding:gzip' --add-header 'Cache-Control: max-age=31449600' _site/ s3://fusion.dominicwatson.co.uk/ --exclude '*.*' --include '*.js'
+s3cmd sync --progress -m text/html --acl-public --add-header 'Content-Encoding:gzip' --add-header 'X-UA-Compatible:IE=edge' --add-header 'Cache-Control: max-age=0' _site/ s3://fusion.dominicwatson.co.uk/ --exclude '*.*' --include '*.html'
 
 exit 0
