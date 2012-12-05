@@ -1,4 +1,3 @@
 files: [
-    'static/js/jquery.js'
-  , 'static/js/jquery.hotkeys.js'
+    'static/js/jquery.hotkeys.js'
   , 'static/js/frank.fusion.js' ]
