@@ -1,4 +1,4 @@
---- 
+---
 name: xmlsearch-and-default-namespaces
 layout: post
 title: XmlSearch and default Namespaces
@@ -14,14 +14,16 @@ This pops up frequently enough on the cf-talk list and around the blogosphere. T
 
 If you were keen, you may have noted the comments that refer to the technique not working when there are multiple, nested default namespaces. Take the following Xml for example:
 
-{% highlight XML %}<?xml version="1.0"?>
+{% highlight xml %}
+<?xml version="1.0"?>
 <foo xmlns="http://dominicwatson.co.uk/foo/">
- <foochild>
-  <bar xmlns="http://dominicwatson.co.uk/bar/">
-   <barchild>lamb</barchild>
-  </bar>
- </foochild>
-</foo>{% endhighlight %}
+	<foochild>
+		<bar xmlns="http://dominicwatson.co.uk/bar/">
+			<barchild>lamb</barchild>
+		</bar>
+	</foochild>
+</foo>
+{% endhighlight %}
 
 Doing `XmlSearch(theXml, '//:foochild')` will return results but `XmlSearch(theXml, '//:barchild')` will not. There are ways around this using XPath but they can become very cumbersome if your XPath is anything like complicated.
 
