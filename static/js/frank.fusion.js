@@ -114,6 +114,8 @@
 		$this.attr( "title", "Type 'g' then '" + key + "' to follow this link" );
 	} );
 
+	focusOnFirstPost();
+
 	$( window ).load( function(){
 		if ( $('#disqus_thread').length ){
 			window.disqus_shortname = 'frankfusion';
