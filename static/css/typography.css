@@ -8,9 +8,9 @@
 /* Default font settings.
 	 The font-size percentage is of 16px. (0.75 * 16px = 12px) */
 body {
-	font-size: 80%;
+	font-size: 90%;
 	color: #222;
-	font-family: Georgia, serif;
+	font-family: "Droid Serif", Georgia, serif;
 }
 
 /* Headings
@@ -18,10 +18,10 @@ body {
 
 h1,h2,h3,h4,h5,h6 { font-weight: normal; color: #333333; }
 
-h1 { font-size: 3em; line-height: 1; margin-bottom: 0.5em; }
-h2 { font-size: 2em; margin-bottom: 0.75em; }
-h3 { font-size: 1.5em; line-height: 1; margin-bottom: 1em; }
-h4 { font-size: 1.2em; line-height: 1.25; margin-bottom: 1.25em; height: 1.25em; }
+h1 { font-size: 2.4em; line-height: 1; margin-bottom: 0.5em; }
+h2 { font-size: 1.6em; margin-bottom: 0.75em; }
+h3 { font-size: 1.2em; line-height: 1; margin-bottom: 1em; }
+h4 { font-size: 1em; line-height: 1.25; margin-bottom: 1.25em; height: 1.25em; }
 h5 { font-size: 1em; font-weight: bold; margin-bottom: 1.5em; }
 h6 { font-size: 1em; font-weight: bold; }
 
@@ -29,7 +29,7 @@ h6 { font-size: 1em; font-weight: bold; }
 /* Text elements
 -------------------------------------------------------------- */
 
-p           { margin: 0 0 1em; font-size:1.2em; }
+p           { margin: 0 0 1em; }
 p img       { float: left; margin: 1.5em 1.5em 1.5em 0; padding: 0; }
 p img.right { float: right; margin: 1.5em 0 1.5em 1.5em; }
 
@@ -51,20 +51,16 @@ del         { color:#666; }
 /* Article text
 --------------------------------------------------------------- */
 article {
-	font-family : Verdana, "Sans serif";
-	font-size   : 1em;
-}
-
-article p {
-	font-size : 1em;
+	font-family : 'Open Sans', sans-serif;
 }
 
 pre,code    { margin: 1.5em 0; white-space: pre; }
 tt          { display: block; margin: 1.5em 0; line-height: 1.5; }
 pre, code, tt, .mono {
-	font-size   : 0.9em;
-	font-family : "Bitstream Vera Sans Mono","Monaco",'andale mono', 'lucida console', monospace, "Courier New";
-	line-height : 1.5;
+	font-size      : 0.9em;
+	font-family    : "Ubuntu Mono","Bitstream Vera Sans Mono","Monaco","andale mono","lucida console",monospace,"Courier New";
+	line-height    : 1.2;
+	letter-spacing : 0.1em;
 }
 
 article h1,
@@ -74,21 +70,21 @@ article h4,
 article blockquote,
 article #post-content p:first-child,
 article #post-content p:first-child * {
-	font-family : Georgia, serif;
+	font-family : "Droid Serif", Georgia, serif;
 }
 
 article p:first-child {
-	font-size   : 1.2em;
-	font-style  : italic;
+	font-style     : italic;
+	font-size      : 0.9em;
+	letter-spacing : 0.1em;
+	line-height    : 1.2em;
 }
 
 article #post-content blockquote p {
-	font-size  : 1em;
 	font-style : italic;
 }
 
 #dsq-content .dsq-comment-text p {
-	font-size  : 1em;
 	font-style : normal;
 }
 
@@ -97,13 +93,13 @@ article #post-content blockquote p {
 }
 
 	#keyboard-navigation-help h1 {
-		font-size : 1.8em;
+		font-size : 1.5em;
 	}
 	#keyboard-navigation-help dd, dt {
 		line-height : 1.5;
 	}
 	#keyboard-navigation-help dt {
-		font-size : 1.4em;
+		font-size : 1.2em;
 	}
 		#keyboard-navigation-help dd strong {
 			color : yellow;

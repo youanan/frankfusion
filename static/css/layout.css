@@ -17,7 +17,7 @@ footer, #main  {
 }
 
 .centerizer {
-	max-width : 540px;
+	max-width : 600px;
 	margin    : 0px auto;
 	position  : relative;
 }
@@ -55,7 +55,7 @@ header {
 		position    : absolute;
 		z-index     : 2;
 		right       : 0;
-		bottom      : -54px;
+		bottom      : -65px;
 	}
 
 	#fork-me {
@@ -90,7 +90,7 @@ nav {
 	background-color: #376477;
 	padding: 0.5em 0;
 	color: white;
-	font-family : Verdana, "sans serif";
+	font-family : 'Open Sans', sans-serif;
 }
 
 	nav ul {
@@ -106,7 +106,7 @@ nav {
 		color           : white;
 		text-decoration : none;
 		font-size       : 1.1em;
-		font-family     : Verdana, "sans serif";
+		font-family     : 'Open Sans', sans-serif;
 		text-transform	: lowercase;
 	}
 
@@ -126,15 +126,15 @@ nav {
 }
 
 .post-list {
-	margin  : 0;
+	margin  : 0 0 0 0.2em;
 	padding : 0;
 }
 
 	.post-list li {
 		list-style     : none;
-		font-size      : 1.2em;
 		letter-spacing : 0.1em;
 		line-height    : 2;
+		font-family    : 'Open Sans', sans-serif;
 	}
 
 	.post-list a {

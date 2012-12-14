@@ -14,7 +14,7 @@ article nav {
 }
 
 	article nav a, article nav a:hover {
-		font-family    : Verdana,"Sans serif";
+		font-family    : 'Open Sans', sans-serif;
 		font-size      : 1em;
 		color          : #376477;
 	}
@@ -38,7 +38,6 @@ article #published-in {
 
 article h1 {
 	font-size     : 2em;
-	margin        : 0.1em 0;
 }
 article h2 {
 	font-size     : 1.6em;
