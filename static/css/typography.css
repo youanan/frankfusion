@@ -67,15 +67,17 @@ article h1,
 article h2,
 article h3,
 article h4,
-article blockquote,
+article blockquote {
+	font-family : "Droid Serif", Georgia, serif;
+}
+
 article #post-content p:first-child,
 article #post-content p:first-child * {
-	font-family : "Droid Serif", Georgia, serif;
+	font-family : Georgia, serif;
 }
 
 article p:first-child {
 	font-style     : italic;
-	font-size      : 0.9em;
 	letter-spacing : 0.1em;
 	line-height    : 1.2em;
 }
