@@ -38,7 +38,7 @@
 					<p>A blog on web development, by Dominic Watson</p>
 					<a id="follow-me" class="no-print" href="http://twitter.com/#!/dom_watson" title="Follow me on twitter">Follow me on twitter</a>
 					<a id="fork-me"   class="no-print" href="https://github.com/dominicwatson" title="Fork me on GitHub">Fork me on GitHub</a>
-
+					<input id="site-search-input" />
 					<a id="show-keyboard-shortcuts" class="no-print" data-goto-key="?" href="#keyboard-navigation-help" title="Show keyboard shortcuts (type '?' to toggle)">?</a>
 					<div id="keyboard-navigation-help">
 						<h1>Keyboard shortcuts</h1>
@@ -88,5 +88,6 @@
 		<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
   		<script>if ( typeof jQuery === 'undefined' ) { document.write( '<sc' + 'ript src="/static/js/jquery.js"></scr' + 'ipt>' ); }</script>
   		<script src="{% minified_js_file %}"></script>
+  		<script src="/static/js/site.search.js"></script>
 	</body>
 </html>
