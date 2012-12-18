@@ -116,6 +116,8 @@
 
 	focusOnFirstPost();
 
+	$( '#site-search-input' ).siteSearch();
+
 	$( window ).load( function(){
 		if ( $('#disqus_thread').length ){
 			window.disqus_shortname = 'frankfusion';
