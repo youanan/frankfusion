@@ -9,10 +9,10 @@ echo =========================
 echo GZIP All Html, css and js
 echo =========================
 
-find _site/ -iname '*.html' -exec gzip -n {} +
-find _site/ -iname '*.js' -exec gzip -n {} +
-find _site/ -iname '*.css' -exec gzip -n {} +
-find _site/ -iname '*.gz' -exec rename 's/\.gz$//i' {} +
+find _site/ -iname '*.html' -exec sh -c 'gzip -n -c --best "{}" > tmp && cat tmp > "{}"' \;
+find _site/ -iname '*.js' -exec sh -c 'gzip -n -c --best "{}" > tmp && cat tmp > "{}"' \;
+find _site/ -iname '*.css' -exec sh -c 'gzip -n -c --best "{}" > tmp && cat tmp > "{}"' \;
+rm tmp
 echo done.
 
 echo ==================
