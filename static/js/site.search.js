@@ -120,18 +120,22 @@
 			var $input           = $(this)
 			  , $resultsList     = $('<ul class="site-search-results"></ul>')
 			  , $container       = $input.parent()
-			  , doSearch, renderResult, gotoFirstResult, navigateResults;
+			  , doSearch, renderResult, gotoFirstResult, navigateResults, exitSearch;
 
 			$input.after( $resultsList );
 
-			doSearch = function(){
-				var results = search.posts( $input.val() )
-				  , i;
+			doSearch = function( e ){
+				var chr = String.fromCharCode( e.keyCode )
+				var results, i;
 
-				$resultsList.find( 'li' ).remove();
+				if ( chr.match( /\w|\s/ ) ) {
+					results = search.posts( $input.val() )
 
-				for( i=0; i < 10 && i < results.length; i++ ){
-					$resultsList.append( renderResult( results[i], i ) );
+					$resultsList.find( 'li' ).remove();
+
+					for( i=0; i < 10 && i < results.length; i++ ){
+						$resultsList.append( renderResult( results[i], i ) );
+					}
 				}
 			};
 
@@ -139,8 +143,24 @@
 				return $( '<li class="site-search-result ' + (index % 2 ? 'odd' : 'even') +  '"><a href="' + result.href + '">' + result.highlighted + '</a></li>' );
 			};
 
-			navigateResults = function( direction ){
-				var $focusedResult = $resultsList.find( 'li>a:focus' ).parent();
+			navigateResults = function( keypressEvent, direction ){
+				var $postToFocusOn;
+				switch( direction ){
+					case 'first':
+						$postToFocusOn = $resultsList.find( 'li:first a' );
+					break;
+					case 'up':
+						$postToFocusOn = $resultsList.find( 'li a:focus' ).parent().prev().find( 'a' );
+						if ( !$postToFocusOn.length ) {
+							$postToFocusOn = $input;
+						}
+					break;
+					case 'down':
+						$postToFocusOn = $resultsList.find( 'li a:focus' ).parent().next().find( 'a' );
+					break;
+				}
+
+				$postToFocusOn.length && $postToFocusOn.focus() && keypressEvent.preventDefault();
 			};
 
 			gotoFirstResult = function(){
@@ -151,9 +171,22 @@
 				}
 			};
 
+			exitSearch = function(){
+				$input.blur();
+				$resultsList.find( 'li' ).remove();
+				return false;
+			};
+
+
 			$input.keyup( 'return', gotoFirstResult )
-			      .keydown( 'down', function(){ $resultsList.find( 'li:first a' ).focus(); } )
+			      .keyup( 'esc'   , exitSearch )
+			      .keydown( 'down', function( e ){ navigateResults( e, 'first' ); } )
 			      .keyup( doSearch );
+
+			$resultsList.keydown( 'down', function( e ){ navigateResults( e, 'down' ); } )
+			            .keydown( 'up'  , function( e ){ navigateResults( e, 'up'   ); } )
+			      		.keyup( 'esc'   , exitSearch );
+
 		} );
 	};
 
