@@ -3,6 +3,7 @@
 	var $keyboardHelp = $( '#keyboard-navigation-help' )
 	  , $categories   = $( '#published-in a' )
 	  , $showHelp     = $( '#show-keyboard-shortcuts' )
+	  , $searchBox    = $( '#site-search-input' )
 	  , gotoMode     = false
 	  , helpShowing  = false
 	  , shiftPostListFocus
@@ -15,7 +16,8 @@
 	  , genericKeyHandler
 	  , escapeFeatures
 	  , getFocusedPostLink
-	  , focusOnFirstPost;
+	  , focusOnFirstPost
+	  , focusInSearchBox;
 
 	shiftPostListFocus = function( e, direction ){
 		var $focusedLink = getFocusedPostLink()
@@ -88,6 +90,10 @@
 		$( '.post-list-item-link:first' ).focus();
 	};
 
+	focusInSearchBox = function(){
+		$searchBox.focus();
+	};
+
 	escapeFeatures = function(){
 		hideKeyboardShortcutHelp();
 		getFocusedPostLink().blur();
@@ -98,9 +104,12 @@
 	         .keydown( 'down'   , function( e ){ shiftPostListFocus( e, 'down' ); } )
 	         .keydown( 'g'      , toggleGotoMode             )
 	         .keydown( 'shift+/', toggleKeyboardShortcutHelp )
+	         .keyup  ( 's'      , focusInSearchBox           )
 	         .keydown( 'esc'    , escapeFeatures             )
 	         .keydown( '1'      , focusOnFirstPost           )
 	         .keydown( genericKeyHandler );
+
+	$searchBox.siteSearch();
 
 	$showHelp.click( function( e ){
 		e.preventDefault();
@@ -115,8 +124,6 @@
 	} );
 
 	focusOnFirstPost();
-
-	$( '#site-search-input' ).siteSearch();
 
 	$( window ).load( function(){
 		if ( $('#disqus_thread').length ){

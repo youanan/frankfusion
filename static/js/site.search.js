@@ -119,7 +119,8 @@
 		return this.each( function(){
 			var $input           = $(this)
 			  , $resultsList     = $('<ul class="site-search-results"></ul>')
-			  , doSearch, renderResult;
+			  , $container       = $input.parent()
+			  , doSearch, renderResult, gotoFirstResult, navigateResults;
 
 			$input.after( $resultsList );
 
@@ -129,16 +130,30 @@
 
 				$resultsList.find( 'li' ).remove();
 
-				for( i=0; i < results.length; i++ ){
-					$resultsList.append( renderResult( results[i] ) );
+				for( i=0; i < 10 && i < results.length; i++ ){
+					$resultsList.append( renderResult( results[i], i ) );
 				}
 			};
 
-			renderResult = function( result ){
-				return $( '<li class="site-search-result"><a href="' + result.href + '">' + result.highlighted + '</a></li>' );
+			renderResult = function( result, index ){
+				return $( '<li class="site-search-result ' + (index % 2 ? 'odd' : 'even') +  '"><a href="' + result.href + '">' + result.highlighted + '</a></li>' );
 			};
 
-			$input.keyup( doSearch );
+			navigateResults = function( direction ){
+				var $focusedResult = $resultsList.find( 'li>a:focus' ).parent();
+			};
+
+			gotoFirstResult = function(){
+				$firstResult = $resultsList.find( 'li:first a' );
+
+				if ( $firstResult.length ) {
+					document.location = $firstResult.attr('href');
+				}
+			};
+
+			$input.keyup( 'return', gotoFirstResult )
+			      .keydown( 'down', function(){ $resultsList.find( 'li:first a' ).focus(); } )
+			      .keyup( doSearch );
 		} );
 	};
 

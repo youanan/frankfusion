@@ -48,6 +48,13 @@ acronym     { border-bottom: 1px dotted #666; }
 address     { margin: 0 0 1.5em; font-style: italic; }
 del         { color:#666; }
 
+/* Special text styles
+--------------------------------------------------------------- */
+header h1 {
+	font-size : 2em;
+}
+
+
 /* Article text
 --------------------------------------------------------------- */
 article {
