@@ -8,6 +8,8 @@
 		  , matchPosts, fromCache, getLevenshteinDistance, generateRegexForInput;
 
 		fromCache = function( store, key, generator ) {
+			return generator( key );
+
 			if ( typeof cache[store] === 'undefined' ) {
 				cache[store] = {};
 			}
@@ -83,31 +85,29 @@
 		};
 
 		matchPosts = function (input) {
-			return fromCache( 'matches', input, function( input ){
-				var reg = fromCache( 'regex', input, generateRegexForInput )
-				  , matches, i;
+			var reg = generateRegexForInput( input )
+			  , matches, i;
 
-				matches = posts.filter( function( post ) {
-					post.matchedSimple = post.title.match( reg.simple.expr );
-					if ( post.matchedSimple || post.title.match( reg.fuzzy.expr ) ) {
-						post.score = 100 - fromCache( "levenshtein", post.title + input, function(){
-							return getLevenshteinDistance( post.title, input );
-						} );
+			matches = posts.filter( function( post ) {
+				post.matchedSimple = post.title.match( reg.simple.expr );
+				if ( post.matchedSimple || post.title.match( reg.fuzzy.expr ) ) {
+					post.score = 100 - fromCache( "levenshtein", post.title + input, function(){
+						return getLevenshteinDistance( post.title, input );
+					} );
 
-						if ( post.matchedSimple ) {
-							post.score += 100;
-							post.highlighted = post.title.replace( reg.simple.expr, reg.simple.replace );
-						} else {
-							post.highlighted = post.title.replace( reg.fuzzy.expr, reg.fuzzy.replace );
-						}
-
-						return true;
+					if ( post.matchedSimple ) {
+						post.score += 100;
+						post.highlighted = post.title.replace( reg.simple.expr, reg.simple.replace );
+					} else {
+						post.highlighted = post.title.replace( reg.fuzzy.expr, reg.fuzzy.replace );
 					}
-				});
 
-				return matches.sort( function( a, b ){
-					return b.score - a.score;
-				} );
+					return true;
+				}
+			});
+
+			return matches.sort( function( a, b ){
+				return b.score - a.score;
 			} );
 		};
 
@@ -120,22 +120,30 @@
 			var $input           = $(this)
 			  , $resultsList     = $('<ul class="site-search-results"></ul>')
 			  , $container       = $input.parent()
-			  , doSearch, renderResult, gotoFirstResult, navigateResults, exitSearch;
+			  , lastSearchTerm   = ""
+			  , doSearch, renderResult, gotoFirstResult, navigateResults, clearResults, exitSearch;
 
 			$input.after( $resultsList );
 
 			doSearch = function( e ){
-				var chr = String.fromCharCode( e.keyCode )
-				var results, i;
+				var chr   = String.fromCharCode( e.keyCode )
+				  , input = $input.val()
+				  , results, i;
 
-				if ( chr.match( /\w|\s/ ) ) {
-					results = search.posts( $input.val() )
+				if ( input.length ) {
+					if ( input !== lastSearchTerm ) {
+						lastSearchTerm = input;
 
-					$resultsList.find( 'li' ).remove();
+						results = search.posts( input )
 
-					for( i=0; i < 10 && i < results.length; i++ ){
-						$resultsList.append( renderResult( results[i], i ) );
+						clearResults();
+
+						for( i=0; results[i].score > 80 && i < results.length; i++ ){
+							$resultsList.append( renderResult( results[i], i ) );
+						}
 					}
+				} else {
+					clearResults();
 				}
 			};
 
@@ -171,9 +179,13 @@
 				}
 			};
 
+			clearResults = function(){
+				$resultsList.find( 'li' ).remove();
+			};
+
 			exitSearch = function(){
 				$input.blur();
-				$resultsList.find( 'li' ).remove();
+				clearResults();
 				return false;
 			};
 
