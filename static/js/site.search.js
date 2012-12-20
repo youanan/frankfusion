@@ -138,7 +138,7 @@
 
 						clearResults();
 
-						for( i=0; results[i].score > 80 && i < results.length; i++ ){
+						for( i=0; results[i].score > 70 && i < results.length; i++ ){
 							$resultsList.append( renderResult( results[i], i ) );
 						}
 					}
