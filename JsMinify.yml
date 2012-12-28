@@ -1,3 +1,4 @@
 files: [
     'static/js/jquery.hotkeys.js'
+  , 'static/js/site.search.js'
   , 'static/js/frank.fusion.js' ]
