@@ -1,116 +1,59 @@
 ( function( $, global ){
-	var search;
 
-	search = (function(){
-		var posts = global.searchIndex || []
-		  , cache = {}
-		  , matchPosts, fromCache, getLevenshteinDistance, generateRegexForInput;
+	var searchEngine = (function(){
+		var searchIndex = global.searchIndex || []
+		  , cache = {}, search, generateRegexForInput;
 
-		fromCache = function( store, key, generator ) {
-			return generator( key );
-
-			if ( typeof cache[store] === 'undefined' ) {
-				cache[store] = {};
-			}
-			if ( typeof cache[store][key] === 'undefined' ) {
-				cache[store][key] = generator( key );
-			}
-
-			return cache[store][key];
-		};
-
-		getLevenshteinDistance = function( a, b ){
-			if(a.length == 0) return b.length;
-			if(b.length == 0) return a.length;
-
-			var matrix = [];
-
-			// increment along the first column of each row
-			var i;
-			for(i = 0; i <= b.length; i++){
-				matrix[i] = [i];
-			}
-
-			// increment each column in the first row
-			var j;
-			for(j = 0; j <= a.length; j++){
-				matrix[0][j] = j;
-			}
-
-			// Fill in the rest of the matrix
-			for(i = 1; i <= b.length; i++){
-				for(j = 1; j <= a.length; j++){
-					if(b.charAt(i-1) == a.charAt(j-1)){
-						matrix[i][j] = matrix[i-1][j-1];
-					} else {
-						matrix[i][j] = Math.min(matrix[i-1][j-1] + 1, // substitution
-																		Math.min(matrix[i][j-1] + 1, // insertion
-																						 matrix[i-1][j] + 1)); // deletion
-					}
-				}
-			}
-
-			return matrix[b.length][a.length];
-		};
-
-		generateRegexForInput = function( input ){
-			var inputLetters = input.replace(/\W/, '').split('')
-			  , inputWords   = input.split(/\s/)
-			  , generateReplaceString;
-
-			generateReplaceString = function( inputTokenCount ) {
-				var replace = "", i;
-
-				for( i=0; i < inputTokenCount; i++ ) {
-					replace += ( '<b>$' + (i*2+1) + '</b>' );
-					if ( i + 1 < inputTokenCount ) {
-						replace += '$' + (i*2+2);
-					}
-				}
-
-				return replace;
-			}
-
-			return {
-				simple : {
-					  expr    : new RegExp( '(' + inputWords.join( ')(.*?)(' ) + ')', 'i' )
-					, replace : generateReplaceString( inputWords.length )
-				} , fuzzy : {
-					  expr    : new RegExp( '(' + inputLetters.join(')(.*?)(') + ')', 'i' )
-					, replace : generateReplaceString( inputLetters.length )
-
-				}
-			};
-		};
-
-		matchPosts = function (input) {
+		search = function( input ){
 			var reg = generateRegexForInput( input )
-			  , matches, i;
+			  , matches;
 
-			matches = posts.filter( function( post ) {
-				post.matchedSimple = post.title.match( reg.simple.expr );
-				if ( post.matchedSimple || post.title.match( reg.fuzzy.expr ) ) {
-					post.score = 100 - fromCache( "levenshtein", post.title + input, function(){
-						return getLevenshteinDistance( post.title, input );
-					} );
+			matches = searchIndex.filter( function( item ) {
+				var titleLen = item.title.length
+				  , match, nextMatch, i, highlighted;
 
-					if ( post.matchedSimple ) {
-						post.score += 100;
-						post.highlighted = post.title.replace( reg.simple.expr, reg.simple.replace );
-					} else {
-						post.highlighted = post.title.replace( reg.fuzzy.expr, reg.fuzzy.replace );
+				for( i=0; i < titleLen; i++ ){
+					nextMatch = item.title.substr(i).match( reg.expr );
+
+					if ( !nextMatch ) {
+						break;
+					} else if ( !match || nextMatch[0].length < match[0].length ) {
+						match = nextMatch;
+						highlighted = item.title.substr(0,i) + item.title.substr(i).replace( reg.expr, reg.replace );
 					}
+				}
+
+				if ( match ) {
+					item.score       = 100 - ( match[0].length - input.length );
+					item.highlighted = highlighted;
 
 					return true;
 				}
 			});
 
 			return matches.sort( function( a, b ){
-				return b.score - a.score;
+				return ( b.score - a.score ) || a.title.length - b.title.length;
 			} );
 		};
 
-		return { posts : matchPosts };
+		generateRegexForInput = function( input ){
+			var inputLetters = input.replace(/\W/, '').split('')
+			  , reg = {}, i;
+
+			reg.expr = new RegExp( '(' + inputLetters.join( ')(.*?)(' ) + ')', 'i' );
+			reg.replace = ""
+
+			for( i=0; i < inputLetters.length; i++ ) {
+				reg.replace += ( '<b>$' + (i*2+1) + '</b>' );
+				if ( i + 1 < inputLetters.length ) {
+					reg.replace += '$' + (i*2+2);
+				}
+			}
+
+			return reg
+		};
+
+		return { search : search };
 	})();
 
 
@@ -133,11 +76,11 @@
 					if ( input !== lastSearchTerm ) {
 						lastSearchTerm = input;
 
-						results = search.posts( input )
+						results = searchEngine.search( input )
 
 						clearResults();
 
-						for( i=0; results[i].score > 70 && i < results.length; i++ ){
+						for( i=0; i < results.length && results[i].score > 70; i++ ){
 							$resultsList.append( renderResult( results[i], i ) );
 						}
 					}
