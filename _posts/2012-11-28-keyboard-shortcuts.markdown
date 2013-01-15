@@ -3,7 +3,7 @@ layout: post
 title: Keyboard shortcuts
 time: 2012-11-28 18:13:00 +00:00
 categories:
-    - Javascript
+    - JavaScript
     - HTML
     - General
 ---
