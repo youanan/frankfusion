@@ -65,7 +65,7 @@ For the input, 'cold pa', "**Cold pa**thology" would score 0 and "S**c**aff**old
 
 Before getting in to the code, there is a small complication to consider here: *a single string may have multiple matches to the regular expression*. We are most interested in the most "narrow" match. My solution to this is a little brutal I think - I attempt the regex on decreasing substrings of the user input, breaking when no match is found.
 
-The code below makes use of the array returned by JavaScript's [String.match()](http://lmgtfy.com/?q=javascript match) method. The first element of this array is the substring that is matched by the regular expression. The length of this substring tells us how accurate the result is:
+The code below makes use of the array returned by JavaScript's [String.match()](https://developer.mozilla.org/en-US/docs/JavaScript/Reference/Global_Objects/String/match) method. The first element of this array is the substring that is matched by the regular expression. The length of this substring tells us how accurate the result is:
 
 {% highlight js %}
 var search = function( input ){
