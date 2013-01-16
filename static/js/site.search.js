@@ -24,7 +24,7 @@
 				}
 
 				if ( match ) {
-					item.score       = 100 - ( match[0].length - input.length );
+					item.score       = match[0].length - input.length;
 					item.highlighted = highlighted;
 
 					return true;
@@ -32,7 +32,7 @@
 			});
 
 			return matches.sort( function( a, b ){
-				return ( b.score - a.score ) || a.title.length - b.title.length;
+				return ( a.score - b.score ) || a.title.length - b.title.length;
 			} );
 		};
 
@@ -63,11 +63,11 @@
 			  , $resultsList     = $('<ul class="site-search-results"></ul>')
 			  , $container       = $input.parent()
 			  , lastSearchTerm   = ""
-			  , doSearch, renderResult, gotoFirstResult, navigateResults, clearResults, exitSearch;
+			  , search, renderResult, gotoFirstResult, navigateResults, clearResults, exitSearch;
 
 			$input.after( $resultsList );
 
-			doSearch = function( e ){
+			search = function( e ){
 				var chr   = String.fromCharCode( e.keyCode )
 				  , input = $input.val()
 				  , results, i;
@@ -80,7 +80,7 @@
 
 						clearResults();
 
-						for( i=0; i < results.length && results[i].score > 70; i++ ){
+						for( i=0; i < results.length && results[i].score < 20; i++ ){
 							$resultsList.append( renderResult( results[i], i ) );
 						}
 					}
@@ -135,7 +135,7 @@
 			$input.keyup( 'return', gotoFirstResult )
 			      .keyup( 'esc'   , exitSearch )
 			      .keydown( 'down', function( e ){ navigateResults( e, 'first' ); } )
-			      .keyup( doSearch );
+			      .keyup( search );
 
 			$resultsList.keydown( 'down', function( e ){ navigateResults( e, 'down' ); } )
 			            .keydown( 'up'  , function( e ){ navigateResults( e, 'up'   ); } )

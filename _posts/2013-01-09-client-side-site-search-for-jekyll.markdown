@@ -5,7 +5,7 @@ time: 2013-01-09 22:00:00 +00:00
 categories:
     - Jekyll
     - JavaScript
-    - Ruby
+    - General
 ---
 I've finally got around to implementing a search feature for my Jekyll based blog. I really enjoy using the type of fuzzy search that [Sublime Text 2](http://www.sublimetext.com/2) provides and thought it would be a good opportunity to attempt a JavaScript implementation. In the process, I needlessly used the Levenshtein Distance for scoring search results, demonstrating a classic case of ['Programming by Coincidence'](http://pragprog.com/the-pragmatic-programmer/extracts/coincidence).<!--more-->
 
@@ -59,11 +59,13 @@ var generateRegexForInput = function( input ){
 
 I am scoring results by how narrowly they match the input. This is expressed as:
 
-`100 - ( matchedSubstring.length - userInput.length )`
+`matchedSubstring.length - userInput.length`
 
-For the input, 'cold pa', "**Cold pa**thology" would score 100 and "S**c**aff**old**ing with s**p**or*a*dic spacing" would score 86. I'm not entirely sure why I opted for a maximum score of 100 with worse matches having smaller scores, but it seemed sensible.
+For the input, 'cold pa', "**Cold pa**thology" would score 0 and "S**c**aff**old**ing with s**p**or**a**dic spacing" would score 14. The closer to zero, the better the match.
 
-There is a little complication here: *a single string may have multiple matches to the regular expression*. We are most interested in the most "narrow" match. My solution to this is a little brutal I think and perhaps there is a more direct solution (answers in the comments please!). It makes use of the array returned by JavaScript's [String.match()](http://lmgtfy.com/?q=javascript match) method who's first element is the substring that is matched by the regular expression - the length of this substring tells us how accurate the result is:
+Before getting in to the code, there is a small complication to consider here: *a single string may have multiple matches to the regular expression*. We are most interested in the most "narrow" match. My solution to this is a little brutal I think - I attempt the regex on decreasing substrings of the user input, breaking when no match is found.
+
+The code below makes use of the array returned by JavaScript's [String.match()](http://lmgtfy.com/?q=javascript match) method. The first element of this array is the substring that is matched by the regular expression. The length of this substring tells us how accurate the result is:
 
 {% highlight js %}
 var search = function( input ){
@@ -98,7 +100,7 @@ var search = function( input ){
     // and highlighted title - then tell the filter() method
     // that we wish to keep this item (return true)
     if ( match ) {
-      item.score       = 100 - ( match[0].length - input.length );
+      item.score       = match[0].length - input.length;
       item.highlighted = highlighted;
 
       return true;
@@ -107,7 +109,7 @@ var search = function( input ){
 
   // sort results by score, using length of title as a tie-breaker
   return matches.sort( function( a, b ){
-    return ( b.score - a.score ) || a.title.length - b.title.length;
+    return ( a.score - b.score ) || a.title.length - b.title.length;
   } );
 };
 {% endhighlight %}
