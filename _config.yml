@@ -1,5 +1,6 @@
 permalink: /:year/:month/:title.html
 markdown: rdiscount
 pygments: true
-exclude: _tasks/*
+exclude:
+- _tasks/*
 category_dir: /categories

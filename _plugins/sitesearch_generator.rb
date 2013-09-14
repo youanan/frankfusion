@@ -1,4 +1,4 @@
-require 'json/add/core'
+require 'json'
 
 module Jekyll
 

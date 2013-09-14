@@ -1,4 +1,4 @@
---- 
+---
 name: tidy-autosuggesting-solution
 layout: post
 title: A tidy autosuggesting solution
@@ -13,7 +13,7 @@ The problem
 -----------
 
 >"I have a form field that autosuggests an email address, however it only works with one email address at a time. How would I go
->about setting it up so that when a user starts typing the autosuggest will append the emailaddress with a semicolon and then 
+>about setting it up so that when a user starts typing the autosuggest will append the emailaddress with a semicolon and then
 >allow the user to search for anotheraddress in the same field?"
 
 The bottom line, unless I am misguided, is that it can't be done with the ColdFusion form tags. An *autosuggestdelimiters* attribute would be a really useful addition to the cfinput tag but for now, it doesn't exist.
@@ -28,7 +28,7 @@ The solution
 
 After some experimentation I came up with a single, tiny, javascript function to add in the delimiter to the autosuggest control:
 
-{% highlight JavaScript %}SetDelimiter = function(elId, delim){
+{% highlight js %}SetDelimiter = function(elId, delim){
    if(!ColdFusion.objectCache[elId])
       alert("Error adding delimiter: Auto suggest item, '" + elId + "', could not be found");
    else

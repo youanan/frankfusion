@@ -104,7 +104,7 @@
 	         .keydown( 'down'   , function( e ){ shiftPostListFocus( e, 'down' ); } )
 	         .keydown( 'g'      , toggleGotoMode             )
 	         .keydown( 'shift+/', toggleKeyboardShortcutHelp )
-	         .keyup  ( 's'      , focusInSearchBox           )
+	         .keyup  ( '/'      , focusInSearchBox           )
 	         .keydown( 'esc'    , escapeFeatures             )
 	         .keydown( '1'      , focusOnFirstPost           )
 	         .keydown( genericKeyHandler );
