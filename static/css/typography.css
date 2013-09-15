@@ -70,6 +70,14 @@ pre, code, tt, .mono {
 	letter-spacing : 0.1em;
 }
 
+code {
+	background: #f4f1f1;
+	border : 1px solid #d4d1d1;
+	border-radius: 3px;
+	margin : 0 2px;
+	padding : 0 5px;
+}
+
 article h1,
 article h2,
 article h3,

@@ -1,4 +1,4 @@
-.highlight  { 
+.highlight  {
 	background: #f4f1f1;
 	border-top:1px solid #d4d1d1;
 	border-bottom:1px solid #d4d1d1;
@@ -9,6 +9,13 @@
 
 .highlight pre, .highlight code {
 	margin:0;
+}
+
+.highlight code {
+	padding : 0;
+	background : transparent;
+	border: none;
+	border-radius: 0;
 }
 
 .highlight .c { color: #999988; font-style: italic } /* Comment */
