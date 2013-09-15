@@ -8,7 +8,7 @@ categories:
     - Amazon S3
 ---
 
-My work laptop is a Windows 8 laptop and I wanted to get my jekyll blog up and running on it. In doing so, I upgraded Jekyll to 1.2 and discovered the s3_website gem which makes publishing to S3 a breeze. I also encountered several problems so I thought I'd share the "correct" way to do it.<!--more-->
+My work laptop runs Windows 8 and I wanted to get my jekyll blog working on it. In doing so, I upgraded Jekyll to 1.2 and discovered the s3_website gem which makes publishing to S3 a breeze. I also encountered several problems so I thought I'd share the "correct" way to do it.<!--more-->
 
 Getting Vanilla Jekyll to work on my Windows 8 laptop
 -----------------------------------------------------
@@ -42,7 +42,7 @@ juicer install jslint
 s3_website
 ----------
 
-S3_Website is a ruby gem that allows you to easily publish your static website to S3. It is also Jekyll aware which makes it the perfect fit for my blog. Installation is as simple as `gem install s3_website` and the rest is configuration. My confguration looks like this:
+[S3_Website](https://github.com/laurilehmijoki/configure-s3-website) is a ruby gem that allows you to easily publish your static website to S3. It is also Jekyll aware which makes it the perfect fit for my blog. Installation is as simple as `gem install s3_website` and the rest is configuration. My confguration looks like this:
 
 {% highlight yaml %}
 # s3 ID and Secret are set in Windows Environment Variables (for my login only)
@@ -59,3 +59,16 @@ s3_reduced_redundancy: true
 #   - .css
 #   - .js
 {% endhighlight %}
+
+I had trouble with the script trying to process multiple files at once. The fix was to add an environment variable, `disable_parallel_processing=true`. The sync code also breaks when checking gzipped files for changes so I've had to turn the gzip feature off for now.
+
+My deployment script, now a batch file, is now much simpler than it used to be:
+
+{% highlight bat %}
+@echo off
+call jekyll build
+call s3_website push
+pause
+{% endhighlight %}
+
+All in all, upgrading and getting set up on Windows was a painful process. It makes me want to build a static blog engine in Railo to work with the Railo CLI. Some day, maybe.
