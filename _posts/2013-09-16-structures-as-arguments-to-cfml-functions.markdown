@@ -42,6 +42,7 @@ exec({
 });
 {% endhighlight %}
 
+The second example improves the readability of the function call by forcing the individual arguments to be named. In doing so however, it sacrifices a little readability in the function declaration itself as it is not immediately obvious what arguments are expected. This sacrifice may be worthwhile because the method is defined only once, while there may be many more calls to the method. The obscurity of the single object argument could be made up for with one single point of documentation.
 
 {% highlight js %}
 /**
