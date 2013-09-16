@@ -6,7 +6,7 @@ categories:
     - ColdFusion
 ---
 
-To improve the readability of calling code in JavaScript, we are encouraged to use objects as arguments to functions, especially when those functions require more than a couple of arguments. I've seen this approach several times in CFML code - however, I am not sure that this sage JavaScript advice should apply to CFML.<!--more-->
+To improve the readability of calling code in JavaScript, we are encouraged to use objects as arguments to functions, especially when those functions require more than a couple of arguments. I've seen this approach used in CFML code however, and I am not sure that the same advice should apply.<!--more-->
 
 # The JavaScript example
 
@@ -99,4 +99,4 @@ While the function call may be more readable by using named arguments here, this
 
 # Summary
 
-Before defining a function with a single argument that is a structure of options, think twice. Would that code be more readable by having individual, self-documenting arguments for each of those options? If so, make it so!
+Before defining a function with a single argument that is a structure of options, think twice. Would that code be more readable by having individual, self-documenting arguments for each of those options? If so, make it so! Anyone have opinions to the contrary?
