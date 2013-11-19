@@ -64,8 +64,8 @@ article {
 pre,code    { margin: 1.5em 0; white-space: pre; }
 tt          { display: block; margin: 1.5em 0; line-height: 1.5; }
 pre, code, tt, .mono {
-	font-size      : 0.9em;
-	font-family    : "Ubuntu Mono","Bitstream Vera Sans Mono","Monaco","andale mono","lucida console",monospace,"Courier New";
+	font-size      : 0.8em;
+	font-family    : "Bitstream Vera Sans Mono","Monaco","andale mono","lucida console",monospace,"Courier New";
 	line-height    : 1.2;
 	letter-spacing : 0.1em;
 }
