@@ -43,7 +43,7 @@ create table usermigration (
 update   user_mapping
 
 set      user_mapping.username       = Concat('tmp_', user_mapping.username)
-       , user_mapping.lower_username = Concat('tmp_', user_mapping.lowr_username)
+       , user_mapping.lower_username = Concat('tmp_', user_mapping.lower_username)
 
 where    user_mapping.user_key in ( select newkey from usermigration );
 {% endhighlight %}
